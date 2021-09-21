@@ -1,0 +1,34 @@
+form {
+  padding: 100px;
+  width: 60vw;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.form-group {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 108px;
+}
+
+.form-group .form-label {
+  order: 1;
+  transition: 0.3s font-size;
+}
+
+.form-group .form-control {
+  order: 2;
+  transition: 0.3s font-size;
+}
+
+.form-group .form-control:focus {
+  height: 50px;
+  font-size: 20px;
+}
+
+.form-group .form-control:focus + .form-label {
+  font-size: 20px;
+}
