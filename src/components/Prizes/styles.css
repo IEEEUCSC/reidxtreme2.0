@@ -1,0 +1,111 @@
+/* Title */
+.prizes {
+  text-align: center;
+  padding: 6rem 0rem;
+  background: transparent;
+}
+
+.prizes .section-title {
+  filter: drop-shadow(0rem 0rem 0.5rem white);
+}
+.prizes .row {
+  padding-top: 2rem;
+}
+
+/* prizes card */
+.prizes .card .medal {
+  background-color: transparent;
+}
+.prizes .card {
+  transition: 0.5s transform;
+  margin-bottom: 2rem;
+}
+.prizes .card .medal-img {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.5));
+  transform: scale(0.85);
+  transition: 0.3s;
+}
+
+/* Confetti behind medal */
+.prizes .card .confetti {
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+}
+
+.prizes .card-body {
+  padding: 2rem;
+  text-align: center;
+}
+
+.prizes-tshirt {
+  position: fixed;
+  z-index: -1;
+  bottom: -10rem;
+  right: -20rem;
+  transform: rotate(-20deg);
+  overflow: hidden;
+}
+
+/* Fancy stuff happens in large screens, excludes mobile devices */
+@media only screen and (min-width: 992px) {
+  /* Hiding confetti */
+  .prizes .card .confetti {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 0.3s;
+  }
+
+  /* On hovering over card*/
+  .prizes .card:hover .confetti {
+    /* Displaying confetti */
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  .prizes .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
+  }
+  .prizes .card:hover .medal-img {
+    top: -20;
+    transform: scale(0.9);
+    filter: drop-shadow(0px 0.5rem 0.5rem rgba(0, 0, 0, 0.5));
+  }
+
+  /* Changing size of each card */
+  .prizes .silver {
+    transform: scale(0.95);
+  }
+  .prizes .bronze {
+    transform: scale(0.9);
+  }
+
+  /* Background color of each card on hover */
+  .prizes .gold .card:hover {
+    background-color: rgb(255, 241, 164);
+  }
+  .prizes .silver .card:hover {
+    background-color: rgb(212, 212, 212);
+  }
+  .prizes .bronze .card:hover {
+    background-color: #e6cfb8;
+  }
+}
+
+/* Mobile screens */
+@media only screen and (max-width: 991px) {
+  .prizes .card .confetti {
+    opacity: 0;
+  }
+  .prizes .card {
+    margin: 2rem 5rem;
+  }
+}

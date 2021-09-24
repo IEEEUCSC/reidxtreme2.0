@@ -1,0 +1,86 @@
+.footer {
+  background-color: rgb(26, 26, 26);
+  color: grey;
+  padding: 5rem 0rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-logo {
+  height: 12rem;
+  padding: 1rem;
+}
+
+.socials-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.socials-group > .title {
+  order: 1;
+  transition: 0.3s color;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  padding: 0.5rem;
+  order: 2;
+}
+
+.socials:hover + .title {
+  color: var(--green);
+}
+
+.socials > div {
+  margin: 0rem 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid grey;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.socials > div:hover {
+  color: black;
+  border: 1px solid transparent;
+}
+
+.socials-instagram:hover {
+  background-color: var(--instagram);
+  box-shadow: 0rem 0rem 1rem var(--instagram);
+}
+.socials-facebook:hover {
+  background-color: var(--facebook);
+  box-shadow: 0rem 0rem 1rem var(--facebook);
+}
+.socials-linkedin:hover {
+  background-color: var(--linkedin);
+  box-shadow: 0rem 0rem 1rem var(--linkedin);
+}
+
+.footer-copyright {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-back-to-top {
+  float: right;
+  cursor: pointer;
+  color: grey;
+  text-decoration: none;
+}

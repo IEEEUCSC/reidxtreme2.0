@@ -1,0 +1,132 @@
+.badges {
+  background: url("./assets/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Left-hand (with heading, content and badge select)  */
+.badges-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  order: 1;
+  height: 50rem;
+}
+
+.badges-content {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  padding-top: 6rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Div surrounding badge selector */
+.badges-select-wrapper {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(226, 226, 226, 0.5);
+}
+
+.badges-description {
+  padding: 1rem 0rem;
+}
+
+.badges-description .desc {
+  font-size: 1.25rem;
+}
+/* Div with badge selection (draggable) */
+.badges-select {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.badges-select-item {
+  height: 10rem;
+  width: 10rem;
+  margin: 1rem;
+  border-radius: 50%;
+  background-size: 100%;
+  background-position: center;
+  transition: 0.3s;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.badges-select-item:hover {
+  background-size: 105%;
+  box-shadow: 0rem 0.5rem 1rem rgba(1, 1, 1, 0.25);
+}
+
+/* Badge Preview */
+.badges-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6rem 0rem;
+  order: 2;
+  height: 50rem;
+}
+
+.badges-preview-img {
+  height: 100%;
+  width: 100%;
+  margin: 0rem 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.3s;
+}
+
+.chevron-left,
+.chevron-right {
+  color: white;
+  cursor: pointer;
+  font-size: 5rem;
+  transition: 0.3s color;
+}
+
+.chevron-left:hover,
+.chevron-right:hover {
+  color: grey;
+}
+
+@media screen and (max-width: 991px) {
+  .badges-preview {
+    order: 1;
+    padding-bottom: 0.5rem;
+  }
+  .badges-group {
+    height: 30rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    order: 2;
+    display: block;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(0.5rem);
+  }
+  .badges-content,
+  .badges-select-wrapper {
+    background: none;
+    backdrop-filter: none;
+  }
+  .badges-select {
+    height: 20rem;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+  }
+  .badges-preview {
+    height: 40rem;
+  }
+  .badges-content {
+    display: block;
+    height: auto;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,80 @@
+.countdown {
+  height: 100vh;
+  background: linear-gradient(-45deg, black, rgb(0, 85, 26));
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+  color: white;
+  font-size: 1rem;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.countdown > .container {
+  height: 100%;
+  padding: 6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.countdown-timer {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+
+.countdown-timer > * {
+  padding: 1em;
+  font-size: 1em;
+}
+
+.countdown-number {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown-number-num {
+  font-size: 8em;
+}
+
+.countdown-number-label {
+  font-size: 1.25em;
+}
+
+.chevron {
+  font-size: 5em;
+  height: 0;
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .countdown {
+    font-size: 0.5rem;
+  }
+}

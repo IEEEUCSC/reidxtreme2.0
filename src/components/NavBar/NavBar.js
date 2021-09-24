@@ -1,23 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { HashLink as Link } from "react-router-hash-link";
+import { Link } from "react-scroll";
 
 import "./styles.css";
-import WebsiteLogo from "./assets/logo.png";
-import WebsiteLogoFull from "./assets/full-logo.png";
+import WebsiteLogo from "../../assets/images/logo.png";
+import WebsiteLogoFull from "../../assets/images/full-logo.png";
 
 const navLinks = [
-  { title: "Register", href: "/register" },
-  { title: "Badges", href: "/#badges" },
-  { title: "Prizes", href: "/#prizes" },
-  { title: "Resources", href: "/#resources" },
+  { title: "BADGES", section: "badges" },
+  { title: "PRIZES", section: "prizes" },
+  { title: "TIMELINE", section: "timeline" },
+  { title: "REGISTER", section: "register" },
 ];
 
 const NavBar = () => {
+  // Navbar height
+  const navbarRef = useRef(null);
+  const [height, setHeight] = useState(() => 0);
+
   // Element with Nav Links
   const navLinksElement = navLinks.map((item, index) => (
     <Nav.Item key={index} as="li">
-      <Link to={item.href} className="nav-link">
+      <Link
+        className="nav-link"
+        activeClass="current"
+        spy={true}
+        to={item.section}
+        // Height of navbar
+        offset={-height}
+        isDynamic={true}
+      >
         {item.title}
       </Link>
     </Nav.Item>
@@ -27,12 +39,13 @@ const NavBar = () => {
   const [scroll, setScroll] = useState(() => false);
   useEffect(() => {
     window.onscroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 10) {
         setScroll(true);
       } else {
         setScroll(false);
       }
     };
+    setHeight(navbarRef.current.clientHeight);
   }, []);
 
   return (
@@ -42,9 +55,10 @@ const NavBar = () => {
         variant={scroll ? "dark" : "light"}
         bg={scroll ? "dark" : "light"}
         expand="lg"
+        ref={navbarRef}
       >
         <Navbar.Brand>
-          <Link to="/#home">
+          <Link to="home">
             <img
               className="navbar-logo"
               src={WebsiteLogo}

@@ -1,34 +1,106 @@
-form {
-  padding: 100px;
-  width: 60vw;
+.register {
+  padding: 8rem 0rem;
+  background-color: white;
 }
 
-ul {
-  list-style-type: none;
+.register .form-group {
+  padding: 2rem 0rem;
+  font-size: 1.25rem;
 }
 
-.form-group {
-  padding: 10px;
+/* Div surrounding sub-groups */
+.register .form-sub-group-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.register .form-sub-group {
   display: flex;
   flex-direction: column;
-  height: 108px;
+  padding-right: 1rem;
 }
 
-.form-group .form-label {
+.register .form-sub-group .form-label {
+  position: relative;
+  top: 1.5rem;
+  left: 0.5rem;
   order: 1;
-  transition: 0.3s font-size;
+  z-index: 0;
+  transition: 0.3s;
+  height: 1rem;
 }
 
-.form-group .form-control {
+/* Hiding dummy placeholders */
+.register .form-sub-group .form-control::placeholder {
+  opacity: 0;
+}
+
+.register .form-sub-group .form-control {
+  position: relative;
+  z-index: 1;
   order: 2;
-  transition: 0.3s font-size;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  transition: 0.3s;
+  border-bottom: 1px solid black;
 }
 
-.form-group .form-control:focus {
-  height: 50px;
-  font-size: 20px;
+.register .form-sub-group .form-control:focus {
+  box-shadow: none;
+  border-bottom: 1px solid var(--green);
 }
 
-.form-group .form-control:focus + .form-label {
-  font-size: 20px;
+/* Moves label if placeholder is not shown or if it is focused */
+.register .form-sub-group .form-control:not(:placeholder-shown) + .form-label,
+.register .form-sub-group .form-control:focus + .form-label {
+  top: 0;
+  left: 0;
+}
+
+.register .form-sub-group .form-control:focus + .form-label {
+  color: var(--green);
+}
+
+.register .form-button {
+  margin-right: 2rem;
+  border: 1px solid black;
+  background: transparent;
+  width: 8rem;
+  height: 3rem;
+  color: black;
+  transition: 0.3s;
+}
+
+/* Disabled hover when disabled */
+.register .form-button:hover:not(:disabled) {
+  background: black;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.register .form-button:disabled {
+  border: 1px solid grey;
+  color: grey;
+}
+
+.register .message {
+  font-size: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.register .message.success {
+  color: var(--green);
+}
+.register .message.error {
+  color: red;
+}
+@media screen and (max-width: 991px) {
+  .register .form-sub-group-wrapper {
+    flex-direction: column;
+  }
+  .register .form-button {
+    margin-bottom: 0.5rem;
+  }
 }

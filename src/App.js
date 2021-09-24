@@ -1,27 +1,30 @@
 import React from "react";
 
-// React Router
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-
 // Components
 import NavBar from "./components/NavBar/NavBar";
-import LandingPage from "./components/LandingPage/LandingPage";
+import Countdown from "./components/Countdown/Countdown";
+import HeroSection from "./components/HeroSection/HeroSection";
+import Badges from "./components/Badges/Badges";
+import Prizes from "./components/Prizes/Prizes";
+import Timeline from "./components/Timeline/Timeline";
 import Register from "./components/Register/Register";
-import NoMatchPage from "./components/NoMatchPage/NoMatchPage";
+import Footer from "./components/Footer/Footer";
 
 // Style
 import "./styles.css";
 
 const App = () => {
   return (
-    <Router>
+    <>
       <NavBar />
-      <Switch>
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/register" component={Register} />
-        <Route component={NoMatchPage} />
-      </Switch>
-    </Router>
+      <Countdown />
+      <HeroSection />
+      <Badges />
+      <Prizes />
+      <Timeline />
+      <Register />
+      <Footer />
+    </>
   );
 };
 

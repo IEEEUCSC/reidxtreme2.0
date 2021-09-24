@@ -1,0 +1,85 @@
+/* Hero-section main div */
+.hero-section {
+  height: 100vh;
+  padding: 5rem;
+  background-image: url("./assets/hero-bg.jpg");
+  background-image: linear-gradient(90deg, transparent 10%, black 90%),
+    url("./assets/hero-bg.jpg");
+  /* background: linear-gradient(90deg, transparent, black 80%); */
+  background-size: cover;
+  color: white;
+}
+
+.hero-section .container,
+.hero-section .row {
+  height: 100%;
+}
+
+/* Text within hero div */
+.hero-section .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: left;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+/* Hero content children*/
+.hero-section .hero-content > * {
+  padding: 1rem 0rem;
+}
+
+/* Hero Header */
+.hero-section .hero-header {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Highlighting key words in heading*/
+.hero-section .hero-header .key-word {
+  color: var(--green);
+}
+
+.hero-section .hero-header-wrapper {
+  min-height: 13rem;
+}
+
+/* Text */
+.hero-section .hero-desc {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+/* Hero Button */
+.hero-section .hero-button {
+  border: 1px solid var(--green);
+  background: transparent;
+  width: 14rem;
+  height: 3rem;
+  color: var(--green);
+  transition: 0.3s;
+}
+
+.hero-section .hero-button:hover {
+  background: var(--green);
+  color: black;
+  box-shadow: 0rem 0.5rem 1rem var(--green-transparent);
+}
+
+/* Smaller screen size */
+@media screen and (max-width: 991px) {
+  .hero-section {
+    background-image: linear-gradient(180deg, transparent 10%, black 90%),
+      url("./assets/hero-bg.jpg");
+    padding: 5rem 0rem;
+  }
+  .hero-section .hero-content {
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .hero-section .hero-header-wrapper {
+    min-height: 0.25rem;
+  }
+}

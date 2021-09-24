@@ -1,9 +1,11 @@
 /* Navigation bar */
 .navbar {
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-weight: bold;
   position: fixed;
   width: 100%;
-  z-index: 2;
+  height: 5rem;
+  z-index: 3;
   padding: 0.5rem 4rem;
   transition: 0.3s background-color;
 }
@@ -11,29 +13,35 @@
 .navbar-logo,
 .navbar-logo-full {
   height: 4rem;
+  cursor: pointer;
 }
+
 /* Only for larger screens */
 @media screen and (min-width: 992px) {
   /* Branding */
   .navbar-logo,
   .navbar-logo-full {
     position: relative;
-    transition: 0.5s;
+    transition: 0.3s;
   }
+
   /* Logo animations */
   .navbar-light .navbar-logo-full {
-    right: 5.1rem;
-    opacity: 0;
-  }
-  .navbar-dark .navbar-logo-full {
     right: 4rem;
     opacity: 1;
   }
-  .navbar-light .navbar-logo {
+
+  .navbar-dark .navbar-logo-full {
+    right: 5.1rem;
+    opacity: 0;
+  }
+
+  .navbar-dark .navbar-logo {
     opacity: 1;
     left: 0;
   }
-  .navbar-dark .navbar-logo {
+
+  .navbar-light .navbar-logo {
     left: 1.1rem;
     opacity: 0;
   }
@@ -43,43 +51,52 @@
 .navbar.navbar-light.bg-light {
   background-color: transparent !important;
 }
+
 .navbar.navbar-dark.bg-dark {
-  background-color: rgba(33, 37, 41, 0.9) !important;
-  backdrop-filter: blur(10px);
+  background-color: rgba(22, 25, 27, 0.95) !important;
+  box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
 }
+
 /* Navlist Items */
 .navbar .navbar-nav .nav-item .nav-link {
   padding: 0rem 3rem;
   color: white;
+  cursor: pointer;
 }
-.navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
-  color: rgb(59, 59, 59);
-}
-.navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+
+.navbar .navbar-nav .nav-item .nav-link.current,
+.navbar .navbar-nav .nav-item .nav-link:hover {
   color: var(--green);
 }
+
 /* Navlist toggle */
 .navbar .navbar-toggler .navbar-toggler-icon {
-  background-image: url("./assets/logo.png");
+  background-image: url("../../assets/images/logo.png");
 }
+
 .navbar .navbar-toggler .navbar-toggler-icon::after {
   content: url("./assets/up-arrow.svg");
 }
+
+/* Mobile */
 @media screen and (max-width: 991px) {
+  .navbar.navbar-dark.bg-dark {
+    background-color: black !important;
+  }
+
   /* Hide logo */
   .navbar .navbar-logo,
   .navbar .navbar-logo-full {
-    opacity: 0;
+    display: none;
   }
   /* Div with links */
   .navbar .navbar-collapse {
     position: fixed;
     top: 0;
     padding: 6rem 1rem;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.95);
     height: 100vh;
     min-width: 33vw;
-    backdrop-filter: blur(10px);
     right: -100%;
     text-align: right;
     transition: 0.1s right;
@@ -115,6 +132,6 @@
   }
   .navbar .navbar-toggler.collapsed .navbar-toggler-icon::after {
     transform: rotate(270deg);
-    filter: none;
+    filter: invert(100%);
   }
 }
