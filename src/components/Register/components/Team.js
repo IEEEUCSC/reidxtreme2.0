@@ -31,7 +31,7 @@ const Team = ({ teamData, setTeamData }) => {
               setTeamData({ ...teamData, teamHandle: e.target.value })
             }
           ></Form.Control>
-          <Form.Label>Hackerrank Handle</Form.Label>
+          <Form.Label>HackerRank Handle</Form.Label>
         </Form.Group>
       </div>
     </div>

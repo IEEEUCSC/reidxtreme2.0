@@ -4,7 +4,9 @@ import { Form } from "react-bootstrap";
 const Member = ({ teamData, setTeamData, memberNo }) => {
   return (
     <div className="form-group">
-      <h4 className="form-group-title">Member {memberNo}</h4>
+      <h4 className="form-group-title">
+        {memberNo === 1 ? "Team Leader" : `Member ${memberNo}`}
+      </h4>
       <div className="form-sub-group-wrapper">
         <Form.Group className="form-sub-group">
           <Form.Control

@@ -48,8 +48,8 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <p className="hero-desc">
-                    ReidXtreme - a competitive programming event exclusively for
-                    UCSC students
+                    ReidXtreme - a 24-hour Competitive Programming Competition
+                    exclusively for UOC Undergraduates
                   </p>
                   <Link to="register">
                     <button className="hero-button">REGISTER</button>
