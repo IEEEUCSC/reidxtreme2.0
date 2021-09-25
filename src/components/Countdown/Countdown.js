@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import CountdownElement from "react-countdown";
 import { BsChevronCompactDown as ChevronDown } from "react-icons/bs";
 import { Link } from "react-scroll";
@@ -21,13 +21,13 @@ const Countdown = () => {
   const countdownRender = ({ days, hours, minutes, seconds, completed }) => {
     return (
       <div className="countdown-timer">
-        <CountdownNumber num={days} label="Days" />
+        <CountdownNumber num={days} label="DAYS" />
         <div>:</div>
-        <CountdownNumber num={hours} label="Hours" />
+        <CountdownNumber num={hours} label="HOURS" />
         <div>:</div>
-        <CountdownNumber num={minutes} label="Minutes" />
+        <CountdownNumber num={minutes} label="MINUTES" />
         <div>:</div>
-        <CountdownNumber num={seconds} label="Seconds" />
+        <CountdownNumber num={seconds} label="SECONDS" />
       </div>
     );
   };
@@ -35,13 +35,18 @@ const Countdown = () => {
   return (
     <section id="top" className="countdown">
       <Container>
-        <h3>REGISTRATION CLOSES IN</h3>
-        <CountdownElement
-          date={new Date(countdownTo)}
-          renderer={countdownRender}
-        />
+        <Row>
+          <Col lg={4}></Col>
+          <Col lg={8}>
+            <h3 className="countdown-title">REGISTRATION CLOSES IN</h3>
+            <CountdownElement
+              date={new Date(countdownTo)}
+              renderer={countdownRender}
+            />
+          </Col>
+        </Row>
         <Link to="home">
-          <div className="chevron">
+          <div className="countdown-chevron">
             <ChevronDown />
           </div>
         </Link>

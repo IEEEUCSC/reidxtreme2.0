@@ -1,65 +1,74 @@
 import React from "react";
-import { Container, Row, Card, Col } from "react-bootstrap";
-import { Fade } from "react-awesome-reveal";
 
+import TShirt from "./assets/tshirt.png";
+import IEEECard from "./assets/card.png";
 import "./styles.css";
-
-import GoldImg from "./assets/gold.svg";
-import SilverImg from "./assets/silver.svg";
-import BronzeImg from "./assets/bronze.svg";
-import ConfettiImg from "./assets/confetti.png";
-import TShirt from "./assets/tshirt.jpg";
-
-// Each prizes card
-const PrizeCard = ({ type, img, position, prize, order }) => {
-  return (
-    <Col className={`${type} ${order}`} lg={4}>
-      <Card>
-        <div className="medal">
-          <img className="medal-img" src={img} alt="Gold medal" />
-          <img className="confetti" src={ConfettiImg} alt="Confetti" />
-        </div>
-        <div className="card-body">
-          <h1>{position} place</h1>
-          <h4>{prize}</h4>
-        </div>
-      </Card>
-    </Col>
-  );
-};
 
 const Prizes = () => {
   return (
-    <section className="prizes" id="prizes">
-      <img className="prizes-tshirt" alt="Github T-shirt" src={TShirt}></img>
-      <Container>
-        <h1 className="section-title">PRIZES</h1>
-        <Fade>
-          <Row>
-            <PrizeCard
-              type="silver"
-              img={SilverImg}
-              position="2nd"
-              prize="Github T-shirt for each member"
-              order="order-12 order-lg-first"
-            />
-            <PrizeCard
-              type="gold"
-              img={GoldImg}
-              position="1st"
-              prize="IEEE Membership + GitHub T-shirt for each member"
-              order="order-first order-lg-2"
-            />
-            <PrizeCard
-              type="bronze"
-              img={BronzeImg}
-              position="3rd"
-              prize="Github T-shirt for each member"
-              order="order-last"
-            />
-          </Row>
-        </Fade>
-      </Container>
+    <section id="prizes" className="prizes">
+      <h1 className="section-title">PRIZES</h1>
+      <div className="prizes-cards">
+        <div className="prizes-card prizes-card-silver">
+          <div className="prizes-front">
+            <img
+              className="prizes-img-tshirt"
+              src={TShirt}
+              alt="Github Tshirt"
+            ></img>
+            <div className="prizes-position">
+              <b>2</b>
+            </div>
+          </div>
+          <div className="prizes-back">
+            <p>
+              Github T-shirt <br /> for each member
+            </p>
+          </div>
+        </div>
+
+        <div className="prizes-card prizes-card-gold">
+          <div className="prizes-front">
+            <img
+              className="prizes-img-tshirt"
+              src={TShirt}
+              alt="Github Tshirt"
+            ></img>
+            <img
+              className="prizes-img-card"
+              src={IEEECard}
+              alt="IEEE Membership"
+            ></img>
+            <div className="prizes-position">
+              <b>1</b>
+            </div>
+          </div>
+          <div className="prizes-back">
+            <p>
+              IEEE Membership card + <br /> Github T-shirt <br /> for each
+              member
+            </p>
+          </div>
+        </div>
+
+        <div className="prizes-card prizes-card-bronze">
+          <div className="prizes-front">
+            <img
+              className="prizes-img-tshirt"
+              src={TShirt}
+              alt="Github Tshirt"
+            ></img>
+            <div className="prizes-position">
+              <b>3</b>
+            </div>
+          </div>
+          <div className="prizes-back">
+            <p>
+              Github T-shirt <br /> for each member
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

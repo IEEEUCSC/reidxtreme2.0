@@ -17,7 +17,11 @@ import "./styles.css";
 const timelineList = [
   { date: "September 26", icon: <Star />, title: "Launch Event" },
   { date: "October 3", icon: <Workshop />, title: "Workshop I" },
-  { date: "October 9", icon: <Workshop />, title: "Workshop II" },
+  {
+    date: "October 9",
+    icon: <Workshop className="flipped" />,
+    title: "Workshop II",
+  },
   { date: "October 16", icon: <Launch />, title: "ReidXtreme" },
 ];
 

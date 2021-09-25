@@ -9,9 +9,9 @@ import {
 } from "react-icons/bs";
 
 /* Badge Images */
-import Badge1 from "./assets/badge-1.jpg";
-import Badge2 from "./assets/badge-2.jpg";
-import Badge3 from "./assets/badge-3.jpg";
+import Badge1 from "./assets/badge1.svg";
+import Badge2 from "./assets/badge2.svg";
+import Badge3 from "./assets/badge3.svg";
 
 import "./styles.css";
 
@@ -30,11 +30,16 @@ const badgeList = [
   {
     title: "Badge 3",
     desc: "This is the third badge lol, idk what to say.",
-    src: Badge1,
+    src: Badge3,
   },
   {
     title: "Badge 4",
     desc: "This is the fourth badge lol, idk what to say.",
+    src: Badge1,
+  },
+  {
+    title: "Badge 5",
+    desc: "This is the fifth badge lol, idk what to say.",
     src: Badge2,
   },
   {

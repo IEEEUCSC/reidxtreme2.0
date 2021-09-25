@@ -8,6 +8,7 @@
   z-index: 3;
   padding: 0.5rem 4rem;
   transition: 0.3s background-color;
+  backdrop-filter: blur(0.5rem);
 }
 
 .navbar-logo,
@@ -19,20 +20,23 @@
 /* Only for larger screens */
 @media screen and (min-width: 992px) {
   /* Branding */
-  .navbar-logo,
-  .navbar-logo-full {
+  .navbar-logo {
     position: relative;
+    transition: 0.3s;
+  }
+  .navbar-logo-full {
+    position: absolute;
     transition: 0.3s;
   }
 
   /* Logo animations */
   .navbar-light .navbar-logo-full {
-    right: 4rem;
+    left: 4rem;
     opacity: 1;
   }
 
   .navbar-dark .navbar-logo-full {
-    right: 5.1rem;
+    left: 3rem;
     opacity: 0;
   }
 

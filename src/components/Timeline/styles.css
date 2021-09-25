@@ -1,6 +1,7 @@
 .timeline {
   background-color: rgb(26, 26, 26);
   padding: 6rem 0rem;
+  overflow: hidden;
 }
 
 .timeline .section-title {
@@ -16,4 +17,11 @@
 /* Black icons */
 .timeline svg {
   color: black;
+}
+
+/* Flipped icons (not on mobile) */
+@media screen and (min-width: 1150px) {
+  .timeline .flipped {
+    transform: scaleX(-1);
+  }
 }

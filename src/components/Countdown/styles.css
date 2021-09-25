@@ -1,32 +1,17 @@
 .countdown {
-  height: 100vh;
-  background: linear-gradient(-45deg, black, rgb(0, 85, 26));
-  background-size: 200% 200%;
-  animation: gradient 5s ease infinite;
+  height: 40rem;
+  min-height: 100vh;
+  background-color: rgb(26, 26, 26);
   color: white;
   font-size: 1rem;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .countdown > .container {
   height: 100%;
-  padding: 6em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 .countdown-timer {
@@ -34,47 +19,62 @@
   flex-direction: row;
   justify-items: center;
   align-items: center;
+  text-align: center;
 }
 
 .countdown-timer > * {
-  padding: 1em;
-  font-size: 1em;
+  padding: 1rem;
+  font-size: 1rem;
 }
 
 .countdown-number {
   display: flex;
   flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .countdown-number-num {
-  font-size: 8em;
+  font-size: 5rem;
 }
 
 .countdown-number-label {
-  font-size: 1.25em;
+  font-size: 1rem;
 }
 
-.chevron {
-  font-size: 5em;
+.countdown-chevron {
+  position: relative;
+  font-size: 5rem;
   height: 0;
   animation: pulse 2s infinite;
   cursor: pointer;
+  transition: 0.3s color;
+}
+.countdown-chevron:hover {
+  color: var(--green);
 }
 
 @keyframes pulse {
   0% {
     opacity: 1;
+    top: 0.5rem;
   }
   50% {
-    opacity: 0;
+    opacity: 0.2;
+    top: 0rem;
   }
   100% {
     opacity: 1;
+    top: 0.5rem;
   }
 }
 
+@media screen and (min-width: 992px) {
+  .countdown-number {
+    width: 13rem;
+  }
+}
 @media screen and (max-width: 991px) {
   .countdown {
-    font-size: 0.5rem;
+    text-align: center;
   }
 }

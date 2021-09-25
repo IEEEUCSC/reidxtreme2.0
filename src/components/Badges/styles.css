@@ -1,8 +1,9 @@
 .badges {
-  background: url("./assets/background.svg");
+  background: url("assets/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  color: white;
 }
 
 /* Left-hand (with heading, content and badge select)  */
@@ -18,10 +19,10 @@
   height: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 2rem;
   padding-top: 6rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Div surrounding badge selector */
@@ -30,7 +31,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(226, 226, 226, 0.5);
+  background-color: rgba(226, 226, 226, 0.2);
 }
 
 .badges-description {
@@ -60,8 +61,8 @@
 }
 
 .badges-select-item:hover {
-  background-size: 105%;
-  box-shadow: 0rem 0.5rem 1rem rgba(1, 1, 1, 0.25);
+  transform: scale(1.02);
+  filter: drop-shadow(0rem 0.5rem 1rem rgba(1, 1, 1, 0.25));
 }
 
 /* Badge Preview */
@@ -98,9 +99,14 @@
 }
 
 @media screen and (max-width: 991px) {
+  .badges > .container {
+    margin: 0rem;
+    width: 100%;
+    max-width: none;
+  }
   .badges-preview {
     order: 1;
-    padding-bottom: 0.5rem;
+    padding: 3rem;
   }
   .badges-group {
     height: 30rem;
@@ -108,7 +114,7 @@
     padding-top: 2rem;
     order: 2;
     display: block;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(0.5rem);
   }
   .badges-content,

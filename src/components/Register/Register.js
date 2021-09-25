@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Container, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 
+// API
 import { createTeam } from "../../actions/teams";
+
 import Team from "./components/Team";
 import Member from "./components/Member";
+import Egg from "./assets/egg.png";
 
 import "./styles.css";
 
@@ -74,42 +77,57 @@ const Register = () => {
     setAnimate(true);
   }, [page]);
 
+  // Previous page
+  const prevPage = () =>
+    setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : oldPage));
+  // Next page
+  const nextPage = () =>
+    setPage((oldPage) => (oldPage < 3 ? oldPage + 1 : oldPage));
+
   return (
     <section id="register" className="register">
       <Container>
         <h1 className="section-title">REGISTER</h1>
-        <Form onSubmit={(e) => e.preventDefault()}>
-          <div
-            className={animate ? "fade-in" : ""}
-            onAnimationEnd={() => setAnimate(false)}
-          >
-            {formElement}
+        <div className="register-row">
+          <div className="register-form">
+            <Form onSubmit={(e) => e.preventDefault()}>
+              <div
+                className={animate ? "fade-in" : ""}
+                onAnimationEnd={() => setAnimate(false)}
+              >
+                {formElement}
+              </div>
+              <div className="form-button-group">
+                <button
+                  className="form-button"
+                  onClick={prevPage}
+                  disabled={page === 0}
+                >
+                  Previous
+                </button>
+
+                <button
+                  className="form-button"
+                  onClick={nextPage}
+                  disabled={page === 3}
+                >
+                  Next
+                </button>
+
+                <button
+                  className="form-button form-submit"
+                  onClick={handleSubmit}
+                >
+                  Submit
+                </button>
+              </div>
+              <ResponseMessage />
+            </Form>
           </div>
-          <div className="form-button-group">
-            <button
-              className="form-button"
-              onClick={() =>
-                setPage((prevPage) => (prevPage > 0 ? prevPage - 1 : prevPage))
-              }
-              disabled={page === 0}
-            >
-              Previous
-            </button>
-            <button
-              className="form-button"
-              onClick={() =>
-                setPage((prevPage) => (prevPage < 3 ? prevPage + 1 : prevPage))
-              }
-              disabled={page === 3}
-            >
-              Next
-            </button>
-            <button className="form-button" onClick={handleSubmit}>
-              Submit
-            </button>
+          <div className="register-img">
+            <img src={Egg} alt="Egg" title="You are Eggcelent" />
           </div>
-          <ResponseMessage />
-        </Form>
+        </div>
       </Container>
     </section>
   );
