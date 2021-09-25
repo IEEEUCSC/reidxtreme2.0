@@ -141,8 +141,36 @@
 }
 
 .register-img {
-  width: 100%;
+  display: flex;
+  margin: 0;
+  box-sizing: border-box;
 }
+/* .empty-div {
+  flex: 25%;
+  background-color: aqua;
+  width: 100%;
+} */
+
+.register-row {
+  display: flex;
+}
+.register-form {
+  flex: 60%;
+}
+.register-img {
+  flex: 40%;
+}
+.register-image {
+  
+  
+  width:100%;
+  overflow: hidden;
+  float :right;
+  
+  /* background-color: blue; */
+  margin-right: -100px;
+}
+
 
 @media screen and (max-width: 991px) {
   .register .form-sub-group-wrapper {
@@ -150,5 +178,18 @@
   }
   .register .form-button {
     margin-bottom: 0.5rem;
+  }
+
+  .register-row {
+    flex-direction: column;
+  }
+  .register-form {
+    width: 100%;
+    order: 1;
+  }
+  .register-img {
+    width: 100%;
+    order: 2;
+    margin-top : 2rem;
   }
 }

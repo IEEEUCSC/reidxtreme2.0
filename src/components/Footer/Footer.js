@@ -8,7 +8,10 @@ import {
 } from "react-icons/fa";
 
 import WebsiteLogo from "../../assets/images/full-logo.png";
+import IEEELogo from "../../assets/images/IEEE_Logo.png";
+import ACMLogo from "../../assets/images/ACM_Logo.png";
 import "./styles.css";
+
 
 const CopyrightFooter = () => {
   const currentDate = new Date();
@@ -23,15 +26,44 @@ const Footer = () => (
   <footer className="footer">
     <Container>
       <Row>
-        <Col className="footer-logo-wrapper" lg={6}>
+        <Col className="footer-logo-wrapper" lg={4}>
           <img
             className="footer-logo"
-            src={WebsiteLogo}
+            src={ACMLogo}
             title="ReidXtreme"
             alt="ReidXtreme Logo"
           />
         </Col>
-        <Col className="footer-right" lg={6}>
+
+        
+        <Col className="footer-logo-wrapper" lg={4}>
+          <img
+            className="footer-logo-IEEE-ACM"
+            src={IEEELogo}
+            title="IEEE Student Branch Chapter of UCSC"
+            alt="IEEE Logo"
+          />
+        </Col>
+        <Col className="footer-logo-wrapper" lg={4}>
+          <img
+            className="footer-logo-IEEE-ACM"
+            src={WebsiteLogo}
+            title="ACM Student Branch Chapter of UCSC"
+            alt="ACM Logo"
+          />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col className="footer-text" lg={12}>
+          <div>
+            ReidXtreme in Competitive Programming is organized by the ACM Student Chapter of UCSC, with the collaboration of the IEEE Student Branch Chapter of UCSC
+          </div>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col className="footer-right" lg={12}>
           <div className="socials-group">
             <div className="socials">
               <div className="socials-facebook">
@@ -57,6 +89,7 @@ const Footer = () => (
           </div>
         </Col>
       </Row>
+
       <CopyrightFooter />
       <Link
         // First section id name
@@ -65,6 +98,7 @@ const Footer = () => (
       >
         Back to top
       </Link>
+
     </Container>
   </footer>
 );

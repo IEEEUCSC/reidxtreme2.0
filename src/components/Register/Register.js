@@ -125,9 +125,11 @@ const Register = () => {
             </Form>
           </div>
           <div className="register-img">
-            <img src={Egg} alt="Egg" title="You are Eggcelent" />
+            {/* <div className="empty-div"></div> */}
+            <img src={Egg} alt="Egg" title="You are Eggcelent" className="register-image"/>
           </div>
         </div>
+
       </Container>
     </section>
   );

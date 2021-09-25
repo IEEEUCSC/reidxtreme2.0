@@ -8,16 +8,46 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 2rem;
 }
+
+
 
 .footer-logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.footer-logo-IEEE-ACM {
+  height: 14rem;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 1000px){
+  .footer-logo-IEEE-ACM{
+    padding:0rem;
+    vertical-align : center;
+    margin: 0rem;
+  }
+  .footer-logo {
+    padding:0px;
+    vertical-align : center;
+  }
+  
+}
+
 .footer-logo {
   height: 12rem;
   padding: 1rem;
+}
+
+.footer-text {
+  text-align: center;
+  padding:3rem;
+}
+.footer-text:hover {
+  color: var(--green);
 }
 
 .socials-group {
@@ -74,8 +104,9 @@
 }
 
 .footer-copyright {
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
+  padding-top: 2rem;
 }
 
 .footer-back-to-top {
@@ -83,4 +114,5 @@
   cursor: pointer;
   color: grey;
   text-decoration: none;
+
 }
