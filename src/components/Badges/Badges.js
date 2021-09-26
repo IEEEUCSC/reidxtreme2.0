@@ -66,7 +66,7 @@ const Badges = () => {
   const badgeSelect = badgeList.map((item, index) => (
     <div
       key={index}
-      className="badges-select-item"
+      className={"badges-select-item" + (page === index ? " current" : "")}
       style={{ backgroundImage: `url(${item.src})` }}
       onClick={() => setPage(index)}
     />
