@@ -1,6 +1,6 @@
 .timeline {
-  /* background-color: rgb(26, 26, 26); */
-  background: transparent;
+  background-color: rgb(26, 26, 26);
+  /* background: transparent; */
   padding: 6rem 0rem;
   overflow: hidden;
 }

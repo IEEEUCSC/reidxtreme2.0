@@ -51,6 +51,10 @@
   box-shadow: none;
   border-bottom: 1px solid var(--green);
 }
+.register .form-sub-group .form-control:required + .form-label::after {
+  content: "*";
+  color: red;
+}
 
 /* Moves label if placeholder is not shown or if it is focused */
 .register .form-sub-group .form-control:not(:placeholder-shown) + .form-label,
@@ -140,8 +144,7 @@
   color: red;
 }
 
-.register-img {
-  display: flex;
+.register-image-wrapper {
   margin: 0;
   box-sizing: border-box;
 }
@@ -155,22 +158,17 @@
   display: flex;
 }
 .register-form {
-  flex: 60%;
+  flex: 75%;
 }
-.register-img {
-  flex: 40%;
+.register-image-wrapper {
+  flex: 25%;
 }
 .register-image {
-  
-  
-  width:100%;
+  width: 12rem;
   overflow: hidden;
-  float :right;
-  
   /* background-color: blue; */
-  margin-right: -100px;
+  /* margin-right: -100px; */
 }
-
 
 @media screen and (max-width: 991px) {
   .register .form-sub-group-wrapper {
@@ -185,11 +183,8 @@
   }
   .register-form {
     width: 100%;
-    order: 1;
   }
-  .register-img {
-    width: 100%;
-    order: 2;
-    margin-top : 2rem;
+  .register-image {
+    display: none;
   }
 }

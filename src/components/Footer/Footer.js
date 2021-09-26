@@ -26,7 +26,7 @@ const Footer = () => (
   <footer className="footer">
     <Container>
       <Row>
-        <Col className="footer-logo-wrapper" lg={4}>
+        <Col className="footer-logo-wrapper">
           <img
             className="footer-logo"
             src={ACMLogo}
@@ -34,7 +34,7 @@ const Footer = () => (
             alt="ReidXtreme Logo"
           />
         </Col>
-        <Col className="footer-logo-wrapper" lg={4}>
+        <Col className="footer-logo-wrapper">
           <img
             className="footer-logo"
             src={IEEELogo}
@@ -42,7 +42,7 @@ const Footer = () => (
             alt="IEEE Logo"
           />
         </Col>
-        <Col className="footer-logo-wrapper" lg={4}>
+        <Col className="footer-logo-wrapper">
           <img
             className="footer-logo"
             src={WebsiteLogo}
@@ -59,13 +59,31 @@ const Footer = () => (
 
       <div className="socials">
         <div className="socials-facebook">
-          <Facebook />
+          <a
+            href="https://web.facebook.com/IEEE.UCSC"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Facebook />
+          </a>
         </div>
         <div className="socials-instagram">
-          <Instagram />
+          <a
+            href="https://www.instagram.com/ucsc.ieee/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Instagram />
+          </a>
         </div>
         <div className="socials-linkedin">
-          <Linkedin />
+          <a
+            href="https://www.linkedin.com/company/ieee-student-branch-ucsc"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Linkedin />
+          </a>
         </div>
       </div>
 

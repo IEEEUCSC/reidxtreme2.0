@@ -4,15 +4,14 @@
   background-size: cover;
   background-position: center;
   color: white;
+  padding: 6rem 0rem;
 }
 
-/* Left-hand (with heading, content and badge select)  */
-.badges-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  order: 1;
-  height: 50rem;
+.badges .section-title {
+  color: rgb(48, 48, 48);
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 .badges-content {
@@ -20,49 +19,46 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
-  padding-top: 6rem;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Div surrounding badge selector */
-.badges-select-wrapper {
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(226, 226, 226, 0.2);
 }
 
 .badges-description {
-  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
+.badges-description .title {
+  color: var(--green);
+  font-size: 2rem;
+  font-weight: bold;
+}
 .badges-description .desc {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
-/* Div with badge selection (draggable) */
 .badges-select {
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
 }
 
 .badges-select-item {
-  height: 10rem;
-  width: 10rem;
+  height: 7rem;
+  width: 7rem;
   margin: 1rem;
-  border-radius: 50%;
   background-size: 100%;
   background-position: center;
   transition: 0.3s;
   flex-shrink: 0;
   cursor: pointer;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5));
 }
 
 .badges-select-item:hover {
   transform: scale(1.02);
-  filter: drop-shadow(0rem 0.5rem 1rem rgba(1, 1, 1, 0.25));
+  filter: drop-shadow(0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.8));
 }
 
 /* Badge Preview */
@@ -70,9 +66,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 6rem 0rem;
-  order: 2;
-  height: 50rem;
+  height: 20rem;
 }
 
 .badges-preview-img {
@@ -83,56 +77,41 @@
   background-repeat: no-repeat;
   background-size: contain;
   transition: 0.3s;
+  filter: drop-shadow(0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.8));
 }
 
+.badges-group {
+  position: relative;
+}
 .chevron-left,
 .chevron-right {
   color: white;
   cursor: pointer;
-  font-size: 5rem;
   transition: 0.3s color;
+  font-size: 5rem;
+  width: 5rem;
+  position: absolute;
+  top: calc(50% - 2.5rem);
 }
 
+.chevron-left {
+  left: 0;
+}
+.chevron-right {
+  right: 0;
+}
 .chevron-left:hover,
 .chevron-right:hover {
-  color: grey;
+  color: rgb(68, 68, 68);
 }
 
 @media screen and (max-width: 991px) {
-  .badges > .container {
-    margin: 0rem;
-    width: 100%;
-    max-width: none;
-  }
-  .badges-preview {
-    order: 1;
-    padding: 3rem;
-  }
-  .badges-group {
-    height: 30rem;
-    padding: 1rem;
-    padding-top: 2rem;
-    order: 2;
-    display: block;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(0.5rem);
-  }
-  .badges-content,
-  .badges-select-wrapper {
-    background: none;
-    backdrop-filter: none;
+  .badges-description {
+    text-align: center;
+    padding-top: 3rem;
   }
   .badges-select {
-    height: 20rem;
+    justify-content: left;
     overflow-x: scroll;
-    padding-bottom: 1rem;
-  }
-  .badges-preview {
-    height: 40rem;
-  }
-  .badges-content {
-    display: block;
-    height: auto;
-    padding: 1rem;
   }
 }

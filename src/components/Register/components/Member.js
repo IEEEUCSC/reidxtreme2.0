@@ -19,6 +19,7 @@ const Member = ({ teamData, setTeamData, memberNo }) => {
               members[memberNo - 1].regNo = e.target.value;
               return setTeamData({ ...teamData, teamMembers: members });
             }}
+            required={memberNo === 1}
           ></Form.Control>
           <Form.Label>Registration number</Form.Label>
         </Form.Group>
@@ -33,6 +34,7 @@ const Member = ({ teamData, setTeamData, memberNo }) => {
               members[memberNo - 1].name = e.target.value;
               return setTeamData({ ...teamData, teamMembers: members });
             }}
+            required={memberNo === 1}
           ></Form.Control>
           <Form.Label>Name</Form.Label>
         </Form.Group>
@@ -47,6 +49,7 @@ const Member = ({ teamData, setTeamData, memberNo }) => {
               members[memberNo - 1].email = e.target.value;
               return setTeamData({ ...teamData, teamMembers: members });
             }}
+            required={memberNo === 1}
           ></Form.Control>
           <Form.Label>Email</Form.Label>
         </Form.Group>
@@ -61,6 +64,7 @@ const Member = ({ teamData, setTeamData, memberNo }) => {
               members[memberNo - 1].phNo = e.target.value;
               return setTeamData({ ...teamData, teamMembers: members });
             }}
+            required={memberNo === 1}
           ></Form.Control>
           <Form.Label>Contact number</Form.Label>
         </Form.Group>

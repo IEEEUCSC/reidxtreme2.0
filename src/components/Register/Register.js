@@ -24,19 +24,41 @@ const Register = () => {
     ],
   });
 
-  // Removing invalid members (members with fields missing/empty)
+  // Removing empty members
   const formatData = (teamData) => {
     const teamMembers = teamData.teamMembers.slice();
     return {
       ...teamData,
       teamMembers: teamMembers.filter((item) => {
-        if (item.regNo === "") return false;
-        if (item.name === "") return false;
-        if (item.phNo === "") return false;
-        if (item.email === "") return false;
-        return true;
+        if (item.regNo !== "") return true;
+        if (item.name !== "") return true;
+        if (item.phNo !== "") return true;
+        if (item.email !== "") return true;
+        return false;
       }),
     };
+  };
+
+  // Checking if fields are empty
+  const isFormValid = (teamData) => {
+    // Checking team details
+    if (teamData.teamName === "" || teamData.teamHandle === "") return false;
+
+    // Checking member details
+    const teamMembers = teamData.teamMembers.slice();
+    if (teamMembers.length !== 0) {
+      var valid = true;
+      teamMembers.forEach((item) => {
+        if (item.regNo === "") valid = false;
+        if (item.name === "") valid = false;
+        if (item.phNo === "") valid = false;
+        if (item.email === "") valid = false;
+      });
+      if (!valid) return valid;
+    } else {
+      return false;
+    }
+    return true;
   };
 
   // Form Pagination
@@ -57,7 +79,15 @@ const Register = () => {
   // On submitting form
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createTeam(formatData(teamData), setResponse));
+    const formattedTeamData = formatData(teamData);
+    if (isFormValid(formattedTeamData)) {
+      dispatch(createTeam(formattedTeamData, setResponse));
+    } else {
+      setResponse({
+        success: false,
+        message: "Some form fields are incomplete",
+      });
+    }
   };
 
   // Response message component
@@ -87,9 +117,9 @@ const Register = () => {
   return (
     <section id="register" className="register">
       <Container>
-        <h1 className="section-title">REGISTER</h1>
         <div className="register-row">
           <div className="register-form">
+            <h1 className="section-title">REGISTER</h1>
             <Form onSubmit={(e) => e.preventDefault()}>
               <div
                 className={animate ? "fade-in" : ""}
@@ -124,12 +154,22 @@ const Register = () => {
               <ResponseMessage />
             </Form>
           </div>
-          <div className="register-img">
+          <div className="register-image-wrapper">
             {/* <div className="empty-div"></div> */}
-            <img src={Egg} alt="Egg" title="You are Eggcelent" className="register-image"/>
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={Egg}
+                alt="Egg"
+                title="You are Eggcelent"
+                className="register-image"
+              />
+            </a>
           </div>
         </div>
-
       </Container>
     </section>
   );

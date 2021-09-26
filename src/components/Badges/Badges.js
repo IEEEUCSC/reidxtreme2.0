@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useDraggable } from "react-use-draggable-scroll";
 import { Fade } from "react-awesome-reveal";
 
 import {
@@ -9,43 +8,45 @@ import {
 } from "react-icons/bs";
 
 /* Badge Images */
-import Badge1 from "./assets/badge1.svg";
-import Badge2 from "./assets/badge2.svg";
-import Badge3 from "./assets/badge3.svg";
-
+import StarterGambit from "./assets/startergambit.png";
+import AnswerSeeker from "./assets/answerseeker.png";
+import PointHunter from "./assets/pointhunter.png";
+import Brawler from "./assets/brawler.png";
+import Duelist from "./assets/duelist.png";
+import DragonSlayer from "./assets/dragonslayer.png";
 import "./styles.css";
 
 /* List of badges */
 const badgeList = [
   {
-    title: "Badge 1",
-    desc: "This is the first badge lol, idk what to say.",
-    src: Badge1,
+    title: "STARTER'S GAMBIT",
+    desc: "Venture into ReidXtreme",
+    src: StarterGambit,
   },
   {
-    title: "Badge 2",
-    desc: "This is the second badge lol, idk what to say.",
-    src: Badge2,
+    title: "ANSWER SEEKER",
+    desc: "Complete 10 Problems Successfully",
+    src: AnswerSeeker,
   },
   {
-    title: "Badge 3",
-    desc: "This is the third badge lol, idk what to say.",
-    src: Badge3,
+    title: "POINT HUNTER",
+    desc: "Score over 15K Points",
+    src: PointHunter,
   },
   {
-    title: "Badge 4",
-    desc: "This is the fourth badge lol, idk what to say.",
-    src: Badge1,
+    title: "THE BRAWLER",
+    desc: "Finish Second Runner's Up in ReidXtreme",
+    src: Brawler,
   },
   {
-    title: "Badge 5",
-    desc: "This is the fifth badge lol, idk what to say.",
-    src: Badge2,
+    title: "THE DUELIST",
+    desc: "Finish First Runner's Up in ReidXtreme",
+    src: Duelist,
   },
   {
-    title: "Badge 5",
-    desc: "This is the fifth badge lol, idk what to say.",
-    src: Badge3,
+    title: "THE DRAGONSLAYER",
+    desc: "Win ReidXtreme",
+    src: DragonSlayer,
   },
 ];
 
@@ -71,54 +72,43 @@ const Badges = () => {
     />
   ));
 
-  /* Draggable div */
-  const ref = useRef();
-  const { events } = useDraggable(ref);
-
   return (
     <section id="badges" className="badges">
       <Container>
         <Fade>
-          <Row>
-            <Col className="badges-group" lg={6}>
-              <div className="badges-content">
-                <h1 className="section-title">BADGES</h1>
-                <div
-                  className={`badges-description${animate ? " fade-in" : ""}`}
-                >
-                  <h4 className="title">{badgeList[page].title}</h4>
-                  <p className="desc">{badgeList[page].desc}</p>
-                </div>
-              </div>
-              <div className="badges-select-wrapper">
-                <div className="badges-select" {...events} ref={ref}>
-                  {badgeSelect}
-                </div>
-              </div>
-            </Col>
+          <h1 className="section-title">BADGES</h1>
+          <Row className="badges-group">
             <Col className="badges-preview" lg={6}>
-              <ChevrionLeft
-                className="chevron-left"
-                onClick={() =>
-                  setPage(
-                    (prevPage) =>
-                      (prevPage + badgeList.length - 1) % badgeList.length
-                  )
-                }
-              />
               <div
                 className={`badges-preview-img${animate ? " fade-in" : ""}`}
                 style={{ backgroundImage: `url(${badgeList[page].src})` }}
                 onAnimationEnd={() => setAnimate(false)}
               ></div>
-              <ChevronRight
-                className="chevron-right"
-                onClick={() =>
-                  setPage((prevPage) => (prevPage + 1) % badgeList.length)
-                }
-              />
             </Col>
+            <Col
+              lg={6}
+              className={`badges-description${animate ? " fade-in" : ""}`}
+            >
+              <h4 className="title">{badgeList[page].title}</h4>
+              <p className="desc">{badgeList[page].desc}</p>
+            </Col>
+            <ChevrionLeft
+              className="chevron-left"
+              onClick={() =>
+                setPage(
+                  (prevPage) =>
+                    (prevPage + badgeList.length - 1) % badgeList.length
+                )
+              }
+            />
+            <ChevronRight
+              className="chevron-right"
+              onClick={() =>
+                setPage((prevPage) => (prevPage + 1) % badgeList.length)
+              }
+            />
           </Row>
+          <div className="badges-select">{badgeSelect}</div>
         </Fade>
       </Container>
     </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import CountdownElement from "react-countdown";
 import { BsChevronCompactDown as ChevronDown } from "react-icons/bs";
 import { Link } from "react-scroll";
@@ -35,16 +35,13 @@ const Countdown = () => {
   return (
     <section id="top" className="countdown">
       <Container>
-        <Row>
-          <Col lg={4}></Col>
-          <Col lg={8}>
-            <h3 className="countdown-title">REGISTRATION CLOSES IN</h3>
-            <CountdownElement
-              date={new Date(countdownTo)}
-              renderer={countdownRender}
-            />
-          </Col>
-        </Row>
+        <div className="countdown-title">
+          BRACE YOURSELVES FOR <span className="countdown-battle">BATTLE</span>
+        </div>
+        <CountdownElement
+          date={new Date(countdownTo)}
+          renderer={countdownRender}
+        />
         <Link to="home">
           <div className="countdown-chevron">
             <ChevronDown />
