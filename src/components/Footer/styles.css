@@ -11,66 +11,42 @@
   padding-top: 2rem;
 }
 
-
-
 .footer-logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.footer-logo-IEEE-ACM {
+.footer-logo {
+  padding: 3rem;
   height: 14rem;
-  padding: 1rem;
 }
 
-@media only screen and (max-width: 1000px){
-  .footer-logo-IEEE-ACM{
-    padding:0rem;
-    vertical-align : center;
+@media only screen and (max-width: 991px) {
+  .footer-logo {
+    padding: 0rem;
+    vertical-align: center;
     margin: 0rem;
   }
-  .footer-logo {
-    padding:0px;
-    vertical-align : center;
-  }
-  
-}
-
-.footer-logo {
-  height: 12rem;
-  padding: 1rem;
 }
 
 .footer-text {
   text-align: center;
-  padding:3rem;
-}
-.footer-text:hover {
-  color: var(--green);
+  padding: 3rem;
+  transition: color 0.3s;
 }
 
-.socials-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.socials-group > .title {
-  order: 1;
-  transition: 0.3s color;
+.footer:hover .footer-text {
+  color: var(--green);
 }
 
 .socials {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   font-size: 1rem;
   padding: 0.5rem;
   order: 2;
-}
-
-.socials:hover + .title {
-  color: var(--green);
 }
 
 .socials > div {
@@ -114,5 +90,4 @@
   cursor: pointer;
   color: grey;
   text-decoration: none;
-
 }

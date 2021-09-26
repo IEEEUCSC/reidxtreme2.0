@@ -12,12 +12,12 @@ import IEEELogo from "../../assets/images/IEEE_Logo.png";
 import ACMLogo from "../../assets/images/ACM_Logo.png";
 import "./styles.css";
 
-
 const CopyrightFooter = () => {
   const currentDate = new Date();
   return (
     <div className="footer-copyright">
-      Copyright &copy; {currentDate.getFullYear()}
+      Copyright &copy; {currentDate.getFullYear()} ReidXtreme. All rights
+      reserved.
     </div>
   );
 };
@@ -34,11 +34,9 @@ const Footer = () => (
             alt="ReidXtreme Logo"
           />
         </Col>
-
-        
         <Col className="footer-logo-wrapper" lg={4}>
           <img
-            className="footer-logo-IEEE-ACM"
+            className="footer-logo"
             src={IEEELogo}
             title="IEEE Student Branch Chapter of UCSC"
             alt="IEEE Logo"
@@ -46,7 +44,7 @@ const Footer = () => (
         </Col>
         <Col className="footer-logo-wrapper" lg={4}>
           <img
-            className="footer-logo-IEEE-ACM"
+            className="footer-logo"
             src={WebsiteLogo}
             title="ACM Student Branch Chapter of UCSC"
             alt="ACM Logo"
@@ -54,41 +52,22 @@ const Footer = () => (
         </Col>
       </Row>
 
-      <Row>
-        <Col className="footer-text" lg={12}>
-          <div>
-            ReidXtreme in Competitive Programming is organized by the ACM Student Chapter of UCSC, with the collaboration of the IEEE Student Branch Chapter of UCSC
-          </div>
-        </Col>
-      </Row>
+      <div className="footer-text">
+        ReidXtreme Competitive Programming is organized by the ACM Student
+        Chapter of UCSC, in collaboration with the IEEE Student Branch of UCSC
+      </div>
 
-      <Row>
-        <Col className="footer-right" lg={12}>
-          <div className="socials-group">
-            <div className="socials">
-              <div className="socials-facebook">
-                <Facebook />
-              </div>
-              <div className="socials-instagram">
-                <Instagram />
-              </div>
-              <div className="socials-linkedin">
-                <Linkedin />
-              </div>
-            </div>
-            <h6 className="title">IEEE Student Branch</h6>
-          </div>
-
-          <div className="socials-group">
-            <div className="socials">
-              <div className="socials-facebook">
-                <Facebook />
-              </div>
-            </div>
-            <h6 className="title">ACM Student Chapter</h6>
-          </div>
-        </Col>
-      </Row>
+      <div className="socials">
+        <div className="socials-facebook">
+          <Facebook />
+        </div>
+        <div className="socials-instagram">
+          <Instagram />
+        </div>
+        <div className="socials-linkedin">
+          <Linkedin />
+        </div>
+      </div>
 
       <CopyrightFooter />
       <Link
@@ -96,9 +75,8 @@ const Footer = () => (
         to="top"
         className="footer-back-to-top"
       >
-        Back to top
+        BACK TO TOP
       </Link>
-
     </Container>
   </footer>
 );

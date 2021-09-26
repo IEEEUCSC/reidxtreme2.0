@@ -10,6 +10,7 @@ import { AiFillStar as Star } from "react-icons/ai";
 import { GrWorkshop as Workshop } from "react-icons/gr";
 import { GrLaunch as Launch } from "react-icons/gr";
 
+import BackgroundParticles from "./components/BackgroundParticles";
 import "react-vertical-timeline-component/style.min.css";
 import "./styles.css";
 
@@ -50,6 +51,7 @@ const Timeline = () => {
         <h1 className="section-title">TIMELINE</h1>
         <VerticalTimeline>{timelinElement}</VerticalTimeline>
       </Container>
+      <BackgroundParticles />
     </section>
   );
 };

@@ -47,13 +47,3 @@
     font-size: 12px;
   }
 }
-.background-1{
-  background-color:black;
-  position: fixed;
-  z-index: -1;
-  bottom: 0rem;
-  height: 100vh;
-  /* right: -20rem; */
-  overflow: hidden;
-  /* pointer-events: none; */
-}
