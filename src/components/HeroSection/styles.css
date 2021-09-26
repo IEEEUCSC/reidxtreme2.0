@@ -7,6 +7,7 @@
   background-image: linear-gradient(90deg, transparent 30%, black 80%),
     url("./assets/hero-bg.jpg");
   /* background: linear-gradient(90deg, transparent, black 80%); */
+  background-position: center;
   background-size: cover;
   color: white;
   overflow: hidden;
@@ -101,7 +102,7 @@
   .hero-section {
     background-image: linear-gradient(180deg, transparent 10%, black 90%),
       url("./assets/hero-bg.jpg");
-    padding: 5rem 0rem;
+    padding: 5rem 1rem;
   }
   .hero-section .hero-content {
     align-items: center;
