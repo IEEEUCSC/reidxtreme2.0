@@ -100,9 +100,10 @@
 /* Smaller screen size */
 @media screen and (max-width: 991px) {
   .hero-section {
-    background-image: linear-gradient(180deg, transparent 10%, black 90%),
+    background-image: linear-gradient(180deg, transparent 30%, black 90%),
       url("./assets/hero-bg.jpg");
     padding: 5rem 1rem;
+    background-position: 30%;
   }
   .hero-section .hero-content {
     align-items: center;

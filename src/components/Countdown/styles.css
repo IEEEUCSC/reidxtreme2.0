@@ -92,4 +92,13 @@
   .countdown {
     text-align: center;
   }
+  .countdown-timer {
+    flex-direction: column;
+  }
+  .countdown-timer > div {
+    padding: 0;
+  }
+  .countdown-timer > div:nth-child(even) {
+    transform: rotate(90deg);
+  }
 }
