@@ -12,7 +12,7 @@ const Team = ({ teamData, setTeamData }) => {
             type="text"
             value={teamData.teamName}
             placeholder="Team Name"
-            required
+            required={true}
             onChange={(e) =>
               setTeamData({ ...teamData, teamName: e.target.value })
             }
@@ -26,7 +26,7 @@ const Team = ({ teamData, setTeamData }) => {
             type="text"
             value={teamData.teamHandle}
             placeholder="Hackerrank Handle"
-            required
+            required={true}
             onChange={(e) =>
               setTeamData({ ...teamData, teamHandle: e.target.value })
             }
