@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Member = ({ teamData, setTeamData, memberNo }) => {
+const Member = ({ teamData, setTeamData, memberNo, format }) => {
   return (
     <div className="form-group">
       <h4 className="form-group-title">
@@ -19,6 +19,11 @@ const Member = ({ teamData, setTeamData, memberNo }) => {
               members[memberNo - 1].regNo = e.target.value;
               return setTeamData({ ...teamData, teamMembers: members });
             }}
+            onBlur={(e) => {
+              const members = teamData.teamMembers.slice();
+              members[memberNo - 1].regNo = format(e.target.value);
+              return setTeamData({ ...teamData, teamMembers: members });
+            }}
             required={memberNo === 1}
           ></Form.Control>
           <Form.Label>Registration number</Form.Label>
@@ -32,6 +37,11 @@ const Member = ({ teamData, setTeamData, memberNo }) => {
             onChange={(e) => {
               const members = teamData.teamMembers.slice();
               members[memberNo - 1].name = e.target.value;
+              return setTeamData({ ...teamData, teamMembers: members });
+            }}
+            onBlur={(e) => {
+              const members = teamData.teamMembers.slice();
+              members[memberNo - 1].name = format(e.target.value);
               return setTeamData({ ...teamData, teamMembers: members });
             }}
             required={memberNo === 1}
@@ -49,6 +59,11 @@ const Member = ({ teamData, setTeamData, memberNo }) => {
               members[memberNo - 1].email = e.target.value;
               return setTeamData({ ...teamData, teamMembers: members });
             }}
+            onBlur={(e) => {
+              const members = teamData.teamMembers.slice();
+              members[memberNo - 1].email = format(e.target.value);
+              return setTeamData({ ...teamData, teamMembers: members });
+            }}
             required={memberNo === 1}
           ></Form.Control>
           <Form.Label>Email</Form.Label>
@@ -62,6 +77,11 @@ const Member = ({ teamData, setTeamData, memberNo }) => {
             onChange={(e) => {
               const members = teamData.teamMembers.slice();
               members[memberNo - 1].phNo = e.target.value;
+              return setTeamData({ ...teamData, teamMembers: members });
+            }}
+            onBlur={(e) => {
+              const members = teamData.teamMembers.slice();
+              members[memberNo - 1].phNo = format(e.target.value);
               return setTeamData({ ...teamData, teamMembers: members });
             }}
             required={memberNo === 1}

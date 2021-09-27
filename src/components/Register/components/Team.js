@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Team = ({ teamData, setTeamData }) => {
+const Team = ({ teamData, setTeamData, format }) => {
   return (
     <div className="form-group">
       <h4 className="form-group-title">Team Details</h4>
@@ -16,6 +16,9 @@ const Team = ({ teamData, setTeamData }) => {
             onChange={(e) =>
               setTeamData({ ...teamData, teamName: e.target.value })
             }
+            onBlur={(e) =>
+              setTeamData({ ...teamData, teamName: format(e.target.value) })
+            }
           ></Form.Control>
           <Form.Label>Team Name</Form.Label>
         </Form.Group>
@@ -29,6 +32,9 @@ const Team = ({ teamData, setTeamData }) => {
             required={true}
             onChange={(e) =>
               setTeamData({ ...teamData, teamHandle: e.target.value })
+            }
+            onBlur={(e) =>
+              setTeamData({ ...teamData, teamHandle: format(e.target.value) })
             }
           ></Form.Control>
           <Form.Label>HackerRank Handle</Form.Label>

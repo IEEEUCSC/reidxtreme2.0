@@ -61,32 +61,57 @@ const Register = () => {
     return true;
   };
 
+  // Checking if team handle is valid
+  const isTeamHandleValid = () => teamData.teamHandle.slice(0, 4) === "RX2_";
+
+  // Removing extra spaces
+  const removeExtraSpace = (string) => string.replace(/\s+/g, " ").trim();
+
   // Form Pagination
   const [page, setPage] = useState(() => 0);
   const formElement =
     page === 0 ? (
-      <Team teamData={teamData} setTeamData={setTeamData} />
+      <Team
+        teamData={teamData}
+        setTeamData={setTeamData}
+        format={removeExtraSpace}
+      />
     ) : (
-      <Member teamData={teamData} setTeamData={setTeamData} memberNo={page} />
+      <Member
+        teamData={teamData}
+        setTeamData={setTeamData}
+        memberNo={page}
+        format={removeExtraSpace}
+      />
     );
 
   // Response message from server
-  const [response, setResponse] = useState({
+  const [response, setResponse] = useState(() => ({
     success: null,
     message: null,
-  });
+  }));
 
   // On submitting form
   const handleSubmit = (e) => {
     e.preventDefault();
+    setResponse(() => ({
+      success: true,
+      message: "Creating team...",
+    }));
     const formattedTeamData = formatData(teamData);
-    if (isFormValid(formattedTeamData)) {
-      dispatch(createTeam(formattedTeamData, setResponse));
-    } else {
+
+    if (!isTeamHandleValid()) {
+      setResponse({
+        success: false,
+        message: "The HackerRank handle should contain the prefix 'RX2_'",
+      });
+    } else if (!isFormValid(formattedTeamData)) {
       setResponse({
         success: false,
         message: "Some form fields are incomplete",
       });
+    } else {
+      dispatch(createTeam(formattedTeamData, setResponse));
     }
   };
 
