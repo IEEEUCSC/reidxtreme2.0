@@ -1,10 +1,11 @@
 .badges {
-  background: url("assets/bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.6), transparent 20%),
+    url("assets/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 6rem 0rem;
+  padding: 8rem 0rem;
 }
 
 .badges .section-title {

@@ -19,17 +19,25 @@ const CountdownNumber = ({ num, label }) => {
 const Countdown = () => {
   // Countdown
   const countdownRender = ({ days, hours, minutes, seconds, completed }) => {
-    return (
-      <div className="countdown-timer">
-        <CountdownNumber num={days} label="DAYS" />
-        <div>:</div>
-        <CountdownNumber num={hours} label="HOURS" />
-        <div>:</div>
-        <CountdownNumber num={minutes} label="MINUTES" />
-        <div>:</div>
-        <CountdownNumber num={seconds} label="SECONDS" />
-      </div>
-    );
+    if (!completed) {
+      return (
+        <div className="countdown-timer">
+          <CountdownNumber num={days} label="DAYS" />
+          <div>:</div>
+          <CountdownNumber num={hours} label="HOURS" />
+          <div>:</div>
+          <CountdownNumber num={minutes} label="MINUTES" />
+          <div>:</div>
+          <CountdownNumber num={seconds} label="SECONDS" />
+        </div>
+      );
+    } else {
+      return (
+        <div className="countdown-completed">
+          REGISTRATIONS ARE <span className="countdown-closed">CLOSED</span>
+        </div>
+      );
+    }
   };
 
   return (

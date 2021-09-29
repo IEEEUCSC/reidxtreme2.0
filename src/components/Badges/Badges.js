@@ -75,8 +75,8 @@ const Badges = () => {
   return (
     <section id="badges" className="badges">
       <Container>
+        <h1 className="section-title">BADGES</h1>
         <Fade>
-          <h1 className="section-title">BADGES</h1>
           <Row className="badges-group">
             <Col className="badges-preview" lg={6}>
               <div

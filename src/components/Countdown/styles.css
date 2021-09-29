@@ -68,13 +68,23 @@
   color: var(--green);
 }
 
+.countdown-completed {
+  padding-top: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+.countdown-closed {
+  color: red;
+}
+
 @keyframes pulse {
   0% {
     opacity: 1;
     top: 0.5rem;
   }
   50% {
-    opacity: 0.2;
+    opacity: 0.5;
     top: 0rem;
   }
   100% {

@@ -171,6 +171,21 @@
   /* margin-right: -100px; */
 }
 
+/* When registrations are closed */
+.register-closed {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+.register-closed-word {
+  color: var(--green);
+  font-size: 1.75rem;
+}
+
 @media screen and (max-width: 991px) {
   .register .form-sub-group-wrapper {
     flex-direction: column;

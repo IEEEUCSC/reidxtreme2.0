@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 // API
 import { createTeam } from "../../actions/teams";
 
+// data
+import { countdownTo } from "../../data";
+
 import Team from "./components/Team";
 import Member from "./components/Member";
 import Egg from "./assets/egg.png";
@@ -139,45 +142,60 @@ const Register = () => {
   const nextPage = () =>
     setPage((oldPage) => (oldPage < 3 ? oldPage + 1 : oldPage));
 
+  // Checks if registrations are closed
+  const isClosed = () => new Date() > new Date(countdownTo);
+
   return (
     <section id="register" className="register">
       <Container>
         <div className="register-row">
           <div className="register-form">
-            <h1 className="section-title">REGISTER</h1>
-            <Form onSubmit={(e) => e.preventDefault()}>
-              <div
-                className={animate ? "fade-in" : ""}
-                onAnimationEnd={() => setAnimate(false)}
-              >
-                {formElement}
-              </div>
-              <div className="form-button-group">
-                <button
-                  className="form-button"
-                  onClick={prevPage}
-                  disabled={page === 0}
-                >
-                  Previous
-                </button>
+            {
+              // Checking if registration is closed
+              !isClosed() ? (
+                <>
+                  <h1 className="section-title">REGISTER</h1>
+                  <Form onSubmit={(e) => e.preventDefault()}>
+                    <div
+                      className={animate ? "fade-in" : ""}
+                      onAnimationEnd={() => setAnimate(false)}
+                    >
+                      {formElement}
+                    </div>
+                    <div className="form-button-group">
+                      <button
+                        className="form-button"
+                        onClick={prevPage}
+                        disabled={page === 0}
+                      >
+                        Previous
+                      </button>
 
-                <button
-                  className="form-button"
-                  onClick={nextPage}
-                  disabled={page === 3}
-                >
-                  Next
-                </button>
+                      <button
+                        className="form-button"
+                        onClick={nextPage}
+                        disabled={page === 3}
+                      >
+                        Next
+                      </button>
 
-                <button
-                  className="form-button form-submit"
-                  onClick={handleSubmit}
-                >
-                  Submit
-                </button>
-              </div>
-              <ResponseMessage />
-            </Form>
+                      <button
+                        className="form-button form-submit"
+                        onClick={handleSubmit}
+                      >
+                        Submit
+                      </button>
+                    </div>
+                    <ResponseMessage />
+                  </Form>
+                </>
+              ) : (
+                <div className="register-closed">
+                  <div>REGISTRATIONS ARE</div>{" "}
+                  <div className="register-closed-word">CLOSED</div>
+                </div>
+              )
+            }
           </div>
           <div className="register-image-wrapper">
             {/* <div className="empty-div"></div> */}
