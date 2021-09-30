@@ -10,7 +10,7 @@ import { countdownTo } from "../../data";
 
 import Team from "./components/Team";
 import Member from "./components/Member";
-import Egg from "./assets/egg.png";
+import Egg from "./assets/egg.webp";
 
 import "./styles.css";
 

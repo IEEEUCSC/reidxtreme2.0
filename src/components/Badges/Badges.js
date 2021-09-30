@@ -8,12 +8,12 @@ import {
 } from "react-icons/bs";
 
 /* Badge Images */
-import StarterGambit from "./assets/startergambit.png";
-import AnswerSeeker from "./assets/answerseeker.png";
-import PointHunter from "./assets/pointhunter.png";
-import Brawler from "./assets/brawler.png";
-import Duelist from "./assets/duelist.png";
-import DragonSlayer from "./assets/dragonslayer.png";
+import StarterGambit from "./assets/startergambit.webp";
+import AnswerSeeker from "./assets/answerseeker.webp";
+import PointHunter from "./assets/pointhunter.webp";
+import Brawler from "./assets/brawler.webp";
+import Duelist from "./assets/duelist.webp";
+import DragonSlayer from "./assets/dragonslayer.webp";
 import "./styles.css";
 
 /* List of badges */
@@ -30,7 +30,7 @@ const badgeList = [
   },
   {
     title: "POINT HUNTER",
-    desc: "Score over 15K Points",
+    desc: "Score over 1.5K Points",
     src: PointHunter,
   },
   {
@@ -89,7 +89,7 @@ const Badges = () => {
               lg={6}
               className={`badges-description${animate ? " fade-in" : ""}`}
             >
-              <h4 className="title">{badgeList[page].title}</h4>
+              <div className="title">{badgeList[page].title}</div>
               <p className="desc">{badgeList[page].desc}</p>
             </Col>
             <ChevrionLeft

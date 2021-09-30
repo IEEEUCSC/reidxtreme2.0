@@ -7,9 +7,9 @@ import {
   FaLinkedinIn as Linkedin,
 } from "react-icons/fa";
 
-import WebsiteLogo from "../../assets/images/full-logo.png";
-import IEEELogo from "../../assets/images/IEEE_Logo.png";
-import ACMLogo from "../../assets/images/ACM_Logo.png";
+import WebsiteLogo from "../../assets/images/full-logo.webp";
+import IEEELogo from "../../assets/images/IEEE_Logo.webp";
+import ACMLogo from "../../assets/images/ACM_Logo.webp";
 import "./styles.css";
 
 const CopyrightFooter = () => {

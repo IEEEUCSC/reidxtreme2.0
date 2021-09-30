@@ -8,7 +8,6 @@
   z-index: 3;
   padding: 0.5rem 4rem;
   transition: 0.3s background-color;
-  backdrop-filter: blur(0.5rem);
 }
 
 .navbar-logo,
@@ -19,6 +18,9 @@
 
 /* Only for larger screens */
 @media screen and (min-width: 992px) {
+  .navbar {
+    backdrop-filter: blur(0.5rem);
+  }
   /* Branding */
   .navbar-logo {
     position: relative;
@@ -57,7 +59,7 @@
 }
 
 .navbar.navbar-dark.bg-dark {
-  background-color: rgba(22, 25, 27, 0.95) !important;
+  background-color: rgba(22, 25, 27, 0.8) !important;
   box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.7);
 }
 
@@ -75,7 +77,7 @@
 
 /* Navlist toggle */
 .navbar .navbar-toggler .navbar-toggler-icon {
-  background-image: url("../../assets/images/logo.png");
+  background-image: url("../../assets/images/logo.webp");
 }
 
 .navbar .navbar-toggler .navbar-toggler-icon::after {

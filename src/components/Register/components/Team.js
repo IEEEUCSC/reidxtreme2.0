@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap";
 const Team = ({ teamData, setTeamData, format }) => {
   return (
     <div className="form-group">
-      <h4 className="form-group-title">Team Details</h4>
+      <div className="form-group-title">Team Details</div>
       <div className="form-sub-group-wrapper">
         <Form.Group className="form-sub-group">
           <Form.Control

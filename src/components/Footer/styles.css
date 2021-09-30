@@ -1,6 +1,6 @@
 .footer {
   background-color: rgb(26, 26, 26);
-  color: grey;
+  color: rgb(190, 190, 190);
   padding: 5rem 0rem;
 }
 
@@ -89,7 +89,7 @@
 .footer-back-to-top {
   float: right;
   cursor: pointer;
-  color: grey;
+  color: rgb(190, 190, 190);
   text-decoration: none;
 }
 

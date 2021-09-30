@@ -90,13 +90,13 @@
 }
 
 .prizes-card-gold .prizes-back {
-  background-color: rgb(139, 119, 0);
+  background-color: rgb(109, 93, 0);
 }
 .prizes-card-silver .prizes-back {
-  background-color: rgb(138, 138, 138);
+  background-color: rgb(105, 105, 105);
 }
 .prizes-card-bronze .prizes-back {
-  background-color: rgb(116, 83, 56);
+  background-color: rgb(88, 61, 39);
 }
 
 .prizes-back p {

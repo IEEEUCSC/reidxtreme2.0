@@ -7,6 +7,9 @@
   padding: 2rem 0rem;
   font-size: 1.25rem;
 }
+.register .form-group-title {
+  font-size: 1.5rem;
+}
 
 /* Div surrounding sub-groups */
 .register .form-sub-group-wrapper {

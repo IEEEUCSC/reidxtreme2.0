@@ -3,10 +3,9 @@
   height: 40rem;
   min-height: 100vh;
   padding: 5rem;
-  background-image: url("./assets/hero-bg.jpg");
+  background-image: url("./assets/hero-bg.webp");
   background-image: linear-gradient(90deg, transparent 30%, black 80%),
-    url("./assets/hero-bg.jpg");
-  /* background: linear-gradient(90deg, transparent, black 80%); */
+    url("./assets/hero-bg.webp");
   background-position: center;
   background-size: cover;
   color: white;
@@ -101,7 +100,7 @@
 @media screen and (max-width: 991px) {
   .hero-section {
     background-image: linear-gradient(180deg, transparent 30%, black 90%),
-      url("./assets/hero-bg.jpg");
+      url("./assets/hero-bg.webp");
     padding: 5rem 1rem;
     background-position: 30%;
   }

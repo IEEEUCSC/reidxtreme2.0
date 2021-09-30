@@ -1,9 +1,9 @@
 .countdown {
   height: 40rem;
   min-height: 100vh;
-  background-image: url("assets/bg.jpg");
+  background-image: url("assets/bg.webp");
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
-    url("assets/bg.jpg");
+    url("assets/bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

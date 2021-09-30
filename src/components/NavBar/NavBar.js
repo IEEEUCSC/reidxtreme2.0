@@ -3,8 +3,8 @@ import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-scroll";
 
 import "./styles.css";
-import WebsiteLogo from "../../assets/images/logo.png";
-import WebsiteLogoFull from "../../assets/images/full-logo.png";
+import WebsiteLogo from "../../assets/images/logo.webp";
+import WebsiteLogoFull from "../../assets/images/full-logo.webp";
 
 const navLinks = [
   { title: "BADGES", section: "badges" },
