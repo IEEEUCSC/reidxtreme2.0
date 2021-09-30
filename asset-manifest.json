@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.a1ec3614.chunk.css",
-    "main.js": "/static/js/main.e0309e53.chunk.js",
-    "main.js.map": "/static/js/main.e0309e53.chunk.js.map",
+    "main.css": "/static/css/main.460d12ac.chunk.css",
+    "main.js": "/static/js/main.574db2ef.chunk.js",
+    "main.js.map": "/static/js/main.574db2ef.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.097a5503.js",
     "runtime-main.js.map": "/static/js/runtime-main.097a5503.js.map",
     "static/css/2.2aa38b9c.chunk.css": "/static/css/2.2aa38b9c.chunk.css",
@@ -10,25 +10,25 @@
     "static/js/2.3674b700.chunk.js.map": "/static/js/2.3674b700.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.2aa38b9c.chunk.css.map": "/static/css/2.2aa38b9c.chunk.css.map",
-    "static/css/main.a1ec3614.chunk.css.map": "/static/css/main.a1ec3614.chunk.css.map",
+    "static/css/main.460d12ac.chunk.css.map": "/static/css/main.460d12ac.chunk.css.map",
     "static/js/2.3674b700.chunk.js.LICENSE.txt": "/static/js/2.3674b700.chunk.js.LICENSE.txt",
-    "static/media/ACM_Logo.22253edf.png": "/static/media/ACM_Logo.22253edf.png",
+    "static/media/ACM_Logo.39eeee60.webp": "/static/media/ACM_Logo.39eeee60.webp",
     "static/media/styles.css": "/static/media/up-arrow.6cef2db9.svg",
-    "static/media/IEEE_Logo.91f94f91.png": "/static/media/IEEE_Logo.91f94f91.png",
-    "static/media/answerseeker.ebc146a9.png": "/static/media/answerseeker.ebc146a9.png",
-    "static/media/brawler.300902c5.png": "/static/media/brawler.300902c5.png",
-    "static/media/dragonslayer.ec32ceb2.png": "/static/media/dragonslayer.ec32ceb2.png",
-    "static/media/duelist.28acb208.png": "/static/media/duelist.28acb208.png",
-    "static/media/egg.359e20f2.png": "/static/media/egg.359e20f2.png",
-    "static/media/full-logo.25496cc3.png": "/static/media/full-logo.25496cc3.png",
-    "static/media/pointhunter.5bf0d4a1.png": "/static/media/pointhunter.5bf0d4a1.png",
-    "static/media/startergambit.334a3431.png": "/static/media/startergambit.334a3431.png"
+    "static/media/IEEE_Logo.74dd6c86.webp": "/static/media/IEEE_Logo.74dd6c86.webp",
+    "static/media/answerseeker.a29330ba.webp": "/static/media/answerseeker.a29330ba.webp",
+    "static/media/brawler.4934119a.webp": "/static/media/brawler.4934119a.webp",
+    "static/media/dragonslayer.6749db1f.webp": "/static/media/dragonslayer.6749db1f.webp",
+    "static/media/duelist.b7f158b8.webp": "/static/media/duelist.b7f158b8.webp",
+    "static/media/egg.940528e4.webp": "/static/media/egg.940528e4.webp",
+    "static/media/full-logo.4c90dc3f.webp": "/static/media/full-logo.4c90dc3f.webp",
+    "static/media/pointhunter.8da76fd9.webp": "/static/media/pointhunter.8da76fd9.webp",
+    "static/media/startergambit.f5ad3ac4.webp": "/static/media/startergambit.f5ad3ac4.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.097a5503.js",
     "static/css/2.2aa38b9c.chunk.css",
     "static/js/2.3674b700.chunk.js",
-    "static/css/main.a1ec3614.chunk.css",
-    "static/js/main.e0309e53.chunk.js"
+    "static/css/main.460d12ac.chunk.css",
+    "static/js/main.574db2ef.chunk.js"
   ]
 }
