@@ -46,7 +46,6 @@
   width: 2rem;
   height: 2rem;
   display: flex;
-  align-items: center;
   justify-content: center;
   border: 1px solid grey;
   border-radius: 50%;
@@ -58,6 +57,8 @@
 }
 
 .socials a {
+  position: relative;
+  top: 0.1rem;
   color: grey;
 }
 .socials > div:hover {
