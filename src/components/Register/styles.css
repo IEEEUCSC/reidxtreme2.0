@@ -18,9 +18,25 @@
 }
 
 .register .form-sub-group {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding-right: 1rem;
+  margin-right: 1rem;
+}
+
+.register .form-sub-group::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: var(--green);
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: width 0.3s;
+}
+.register .form-sub-group:focus-within::after {
+  width: 100%;
 }
 
 .register .form-sub-group .form-label {
@@ -53,7 +69,6 @@
 
 .register .form-sub-group .form-control:focus {
   box-shadow: none;
-  border-bottom: 1px solid var(--green);
 }
 .register .form-sub-group .form-control:required + .form-label::after {
   content: "*";
