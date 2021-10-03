@@ -16,16 +16,11 @@ const Member = ({ teamData, setTeamData, memberNo, format }) => {
             placeholder="Registration Number"
             onChange={(e) => {
               const members = teamData.teamMembers.slice();
-              members[memberNo - 1].regNo = e.target.value;
-              return setTeamData({ ...teamData, teamMembers: members });
-            }}
-            onBlur={(e) => {
-              const members = teamData.teamMembers.slice();
-              members[memberNo - 1].regNo = format(e.target.value);
+              members[memberNo - 1].regNo = e.target.value.trim();
               return setTeamData({ ...teamData, teamMembers: members });
             }}
             required={memberNo === 1}
-          ></Form.Control>
+          />
           <Form.Label>Registration number</Form.Label>
         </Form.Group>
         <Form.Group className="form-sub-group">
@@ -45,27 +40,22 @@ const Member = ({ teamData, setTeamData, memberNo, format }) => {
               return setTeamData({ ...teamData, teamMembers: members });
             }}
             required={memberNo === 1}
-          ></Form.Control>
+          />
           <Form.Label>Name</Form.Label>
         </Form.Group>
         <Form.Group className="form-sub-group">
           <Form.Control
             name={`member-email-${memberNo}`}
-            type="email"
+            type="text"
             value={teamData.teamMembers[memberNo - 1].email}
             placeholder="Email"
             onChange={(e) => {
               const members = teamData.teamMembers.slice();
-              members[memberNo - 1].email = e.target.value;
-              return setTeamData({ ...teamData, teamMembers: members });
-            }}
-            onBlur={(e) => {
-              const members = teamData.teamMembers.slice();
-              members[memberNo - 1].email = format(e.target.value);
+              members[memberNo - 1].email = e.target.value.trim();
               return setTeamData({ ...teamData, teamMembers: members });
             }}
             required={memberNo === 1}
-          ></Form.Control>
+          />
           <Form.Label>Email</Form.Label>
         </Form.Group>
         <Form.Group className="form-sub-group">
@@ -85,7 +75,7 @@ const Member = ({ teamData, setTeamData, memberNo, format }) => {
               return setTeamData({ ...teamData, teamMembers: members });
             }}
             required={memberNo === 1}
-          ></Form.Control>
+          />
           <Form.Label>Contact number</Form.Label>
         </Form.Group>
       </div>

@@ -19,7 +19,7 @@ const Team = ({ teamData, setTeamData, format }) => {
             onBlur={(e) =>
               setTeamData({ ...teamData, teamName: format(e.target.value) })
             }
-          ></Form.Control>
+          />
           <Form.Label>Team Name</Form.Label>
         </Form.Group>
 
@@ -31,12 +31,9 @@ const Team = ({ teamData, setTeamData, format }) => {
             placeholder="Hackerrank Handle"
             required={true}
             onChange={(e) =>
-              setTeamData({ ...teamData, teamHandle: e.target.value })
+              setTeamData({ ...teamData, teamHandle: e.target.value.trim() })
             }
-            onBlur={(e) =>
-              setTeamData({ ...teamData, teamHandle: format(e.target.value) })
-            }
-          ></Form.Control>
+          />
           <Form.Label>HackerRank Handle</Form.Label>
         </Form.Group>
       </div>

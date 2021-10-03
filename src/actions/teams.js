@@ -7,6 +7,17 @@ export const createTeam = (team, setResponse) => async (dispatch) => {
     dispatch({ type: CREATE, payload: data });
     setResponse({ success: true, message: "Team registered successfully" });
   } catch (error) {
-    setResponse({ success: false, message: "Unable to register team" });
+    const message = error.response?.data?.message || null;
+    let errorMessage = String;
+    if (message && message.slice(0, 6) === "E11000") {
+      if (message.includes("teamName")) {
+        errorMessage = "Team Name already taken";
+      } else {
+        errorMessage = "HackerRank Handle already taken";
+      }
+    } else {
+      errorMessage = "Unable to register team";
+    }
+    setResponse({ success: false, message: errorMessage });
   }
 };
