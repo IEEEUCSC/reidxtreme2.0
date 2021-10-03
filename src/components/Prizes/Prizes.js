@@ -1,8 +1,8 @@
 import React from "react";
 
-import TShirt from "./assets/tshirt.png";
-import IEEECard from "./assets/card.png";
-import Cash from "./assets/cash.png";
+import TShirt from "./assets/tshirt.webp";
+import IEEECard from "./assets/card.webp";
+import Cash from "./assets/cash.webp";
 import "./styles.css";
 
 const Prizes = () => {
