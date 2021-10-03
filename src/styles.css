@@ -28,7 +28,6 @@
 .fade-in {
   animation: fade-in 0.4s forwards;
 }
-
 @keyframes fade-in {
   0% {
     opacity: 0.25;
@@ -40,6 +39,18 @@
 
 .section-title {
   font-weight: bold;
+}
+
+/* Scrollbar */
+*::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.5rem;
+}
+*::-webkit-scrollbar-track {
+  background: black;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(218, 218, 218);
 }
 
 @media screen and (max-width: 991px) {

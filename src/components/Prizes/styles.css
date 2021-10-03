@@ -19,11 +19,12 @@
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 2rem;
+  min-height: 30rem;
 }
 .prizes-card {
   width: 20rem;
-  height: 30rem;
-  transition: 0.3s;
+  height: 20rem;
+  transition: transform 0.3s;
 }
 .prizes-front {
   position: relative;
@@ -32,31 +33,41 @@
   border-radius: 1rem;
 }
 
-.prizes-tba {
+/* .prizes-tba {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
   font-size: 4rem;
   letter-spacing: 0.25rem;
   font-weight: bold;
-}
+} */
 
-.prizes-card,
-.prizes-img-card,
-.prizes-img-tshirt {
-  filter: drop-shadow(0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5));
-}
-
-.prizes-img-tshirt {
+.prizes-cash {
   position: absolute;
-  width: 18rem;
-  left: -4rem;
-  bottom: -0.5rem;
-  z-index: 1;
+  text-align: right;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
   transition: 0.3s;
 }
 
-.prizes-img-card {
+.prizes-card,
+.prizes-img-right,
+.prizes-img-left {
+  filter: drop-shadow(0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5));
+}
+
+.prizes-img-left {
+  position: absolute;
+  bottom: -1rem;
+  z-index: 1;
+  transition: 0.3s;
+  width: 16rem;
+  left: -1rem;
+}
+
+.prizes-img-right {
   position: absolute;
   width: 16rem;
   right: -3rem;
@@ -64,9 +75,10 @@
   z-index: 1;
   transition: 0.3s;
 }
-.prizes-card-gold .prizes-img-tshirt {
-  width: 16rem;
+
+.prizes-card-gold .prizes-img-left {
   left: -4rem;
+  bottom: -0.5rem;
 }
 
 .prizes-position {
@@ -105,25 +117,33 @@
 }
 
 @media screen and (min-width: 992px) {
+  .prizes {
+    padding-top: 8rem;
+  }
   .prizes-card:hover {
     filter: drop-shadow(0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.8));
   }
   .prizes-card:hover .prizes-front {
     border-radius: 1rem 1rem 0rem 0rem;
   }
-  .prizes-card:hover .prizes-img-tshirt {
-    width: 18.25rem;
+  .prizes-card:hover .prizes-img-left {
+    width: 16.25rem;
+    left: -1.5rem;
+    bottom: -1.25rem;
+  }
+  .prizes-card-gold:hover .prizes-img-left {
+    width: 16.25rem;
     left: -4.5rem;
     bottom: -0.75rem;
   }
-  .prizes-card-gold:hover .prizes-img-tshirt {
-    width: 16.25rem;
-    left: -4.5rem;
-  }
-  .prizes-card:hover .prizes-img-card {
+  .prizes-card:hover .prizes-img-right {
     width: 16.5rem;
     right: -3.5rem;
     bottom: -0.75rem;
+  }
+  .prizes-card:hover .prizes-cash {
+    bottom: 0.75rem;
+    right: 0.75rem;
   }
 
   .prizes-front:hover + .prizes-back,
@@ -142,10 +162,10 @@
   }
 
   .prizes-card-silver {
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
   .prizes-card-bronze {
-    transform: scale(0.92);
+    transform: scale(0.8);
   }
 
   /* Card size on hover*/
@@ -153,10 +173,10 @@
     transform: scale(1.02);
   }
   .prizes-card-silver:hover {
-    transform: scale(0.98);
+    transform: scale(0.95);
   }
   .prizes-card-bronze:hover {
-    transform: scale(0.95);
+    transform: scale(0.85);
   }
 }
 
@@ -164,6 +184,9 @@
   .prizes-cards {
     flex-direction: column;
     align-items: center;
+  }
+  .prizes-card {
+    height: 30rem;
   }
   .prizes-back {
     padding-top: 1rem;
