@@ -13,7 +13,6 @@ const Prizes = () => {
         <div className="prizes-card prizes-card-silver">
           <div className="prizes-front">
             <img className="prizes-img-left" src={Cash} alt="Cash Prize" />
-            {/* <div className="prizes-tba">TBA</div> */}
             <div className="prizes-cash">
               Rs.
               <br /> 3,000
@@ -23,10 +22,7 @@ const Prizes = () => {
             </div>
           </div>
           <div className="prizes-back">
-            <p>
-              Rs. 3,000 Cash Prize
-              {/* To Be Announced */}
-            </p>
+            <p>Rs. 3,000 Cash Prize</p>
           </div>
         </div>
 
@@ -38,15 +34,13 @@ const Prizes = () => {
               src={IEEECard}
               alt="IEEE Membership"
             />
-            {/* <div className="prizes-tba">TBA</div> */}
             <div className="prizes-position">
               <b>1</b>
             </div>
           </div>
           <div className="prizes-back">
             <p>
-              3 &times; IEEE Membership Card <br /> + 3 &times; Github T-shirt
-              {/* To Be Announced */}
+              3 &times; IEEE Membership <br /> + 3 &times; Github T-shirt
             </p>
           </div>
         </div>
@@ -54,7 +48,6 @@ const Prizes = () => {
         <div className="prizes-card prizes-card-bronze">
           <div className="prizes-front">
             <img className="prizes-img-left" src={Cash} alt="Cash Prize" />
-            {/* <div className="prizes-tba">TBA</div> */}
             <div className="prizes-cash">
               Rs.
               <br /> 2,000
@@ -64,10 +57,7 @@ const Prizes = () => {
             </div>
           </div>
           <div className="prizes-back">
-            <p>
-              Rs. 2,000 Cash Prize
-              {/* To be Announced */}
-            </p>
+            <p>Rs. 2,000 Cash Prize</p>
           </div>
         </div>
       </div>
