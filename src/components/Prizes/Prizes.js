@@ -40,7 +40,7 @@ const Prizes = () => {
           </div>
           <div className="prizes-back">
             <p>
-              3 &times; IEEE Membership <br /> + 3 &times; Github T-shirt
+              3 &times; IEEE Membership <br /> + 3 &times; Github T-Shirt
             </p>
           </div>
         </div>
