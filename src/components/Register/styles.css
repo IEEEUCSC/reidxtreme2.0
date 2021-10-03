@@ -154,6 +154,7 @@
 .register .message {
   font-size: 1.25rem;
   padding-top: 0.5rem;
+  height: 0;
 }
 
 .register .message.success {
