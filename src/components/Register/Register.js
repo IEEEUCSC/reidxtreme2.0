@@ -8,25 +8,21 @@ import { createTeam } from "../../actions/teams";
 // data
 import { countdownTo } from "../../data";
 
-import Team from "./components/Team";
-import Member from "./components/Member";
+// form validation
+import { isFormValid, isTeamHandleValid, removeExtraSpace } from "./validation";
+
+// Components
+import Team from "./components/Team/Team";
+import Member from "./components/Team/Member";
+import Modal from "./components/Modal/Modal";
+
 import Egg from "./assets/egg.webp";
 
 import "./styles.css";
+import "./components/Team/styles.css"; // form group styling
 
 const Register = () => {
   const dispatch = useDispatch();
-  // Default (empty form)
-  const [teamData, setTeamData] = useState({
-    teamName: "",
-    teamHandle: "",
-    teamMembers: [
-      { regNo: "", name: "", phNo: "", email: "" },
-      { regNo: "", name: "", phNo: "", email: "" },
-      { regNo: "", name: "", phNo: "", email: "" },
-    ],
-  });
-
   // Removing empty members
   const formatData = (teamData) => {
     const teamMembers = teamData.teamMembers.slice();
@@ -42,33 +38,16 @@ const Register = () => {
     };
   };
 
-  // Checking if fields are empty
-  const isFormValid = (teamData) => {
-    // Checking team details
-    if (teamData.teamName === "" || teamData.teamHandle === "") return false;
-
-    // Checking member details
-    const teamMembers = teamData.teamMembers.slice();
-    if (teamMembers.length !== 0) {
-      var valid = true;
-      teamMembers.forEach((item) => {
-        if (item.regNo === "") valid = false;
-        if (item.name === "") valid = false;
-        if (item.phNo === "") valid = false;
-        if (item.email === "") valid = false;
-      });
-      if (!valid) return valid;
-    } else {
-      return false;
-    }
-    return true;
-  };
-
-  // Checking if team handle is valid
-  const isTeamHandleValid = () => teamData.teamHandle.slice(0, 4) === "RX2_";
-
-  // Removing extra spaces
-  const removeExtraSpace = (string) => string.replace(/\s+/g, " ").trim();
+  // Default (empty form)
+  const [teamData, setTeamData] = useState({
+    teamName: "",
+    teamHandle: "",
+    teamMembers: [
+      { regNo: "", name: "", phNo: "", email: "" },
+      { regNo: "", name: "", phNo: "", email: "" },
+      { regNo: "", name: "", phNo: "", email: "" },
+    ],
+  });
 
   // Form Pagination
   const [page, setPage] = useState(() => 0);
@@ -94,6 +73,42 @@ const Register = () => {
     message: null,
   }));
 
+  // Fade animations
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setAnimate(true);
+  }, [page]);
+
+  // Previous page
+  const prevPage = () =>
+    setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : oldPage));
+  // Next page
+  const nextPage = () =>
+    setPage((oldPage) => (oldPage < 3 ? oldPage + 1 : oldPage));
+
+  // Checks if registrations are closed
+  const isClosed = () => new Date() > new Date(countdownTo);
+
+  // Code of conduct modal
+  const [display, setDisplay] = useState(false);
+  const [checked, setChecked] = useState(false);
+
+  // Prevent scrolling when modal is visible
+  const html = document.querySelector("html");
+  if (display) {
+    html.style.overflow = "hidden";
+  } else {
+    html.style.overflow = "auto";
+  }
+
+  const handleOnCheck = () => {
+    if (checked) {
+      setChecked(false);
+    } else {
+      setDisplay(true);
+    }
+  };
+
   // On submitting form
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -103,7 +118,7 @@ const Register = () => {
     }));
     const formattedTeamData = formatData(teamData);
 
-    if (!isTeamHandleValid()) {
+    if (!isTeamHandleValid(teamData)) {
       setResponse({
         success: false,
         message: "The HackerRank handle should contain the prefix 'RX2_'",
@@ -112,6 +127,11 @@ const Register = () => {
       setResponse({
         success: false,
         message: "Some form fields are incomplete",
+      });
+    } else if (!checked) {
+      setResponse({
+        success: false,
+        message: "You have not agreed to the Code of Conduct",
       });
     } else {
       dispatch(createTeam(formattedTeamData, setResponse));
@@ -128,22 +148,6 @@ const Register = () => {
       );
     return <div className="message"></div>;
   };
-
-  // Fade animations
-  const [animate, setAnimate] = useState(false);
-  useEffect(() => {
-    setAnimate(true);
-  }, [page]);
-
-  // Previous page
-  const prevPage = () =>
-    setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : oldPage));
-  // Next page
-  const nextPage = () =>
-    setPage((oldPage) => (oldPage < 3 ? oldPage + 1 : oldPage));
-
-  // Checks if registrations are closed
-  const isClosed = () => new Date() > new Date(countdownTo);
 
   return (
     <section id="register" className="register">
@@ -162,13 +166,40 @@ const Register = () => {
                     >
                       {formElement}
                     </div>
+
+                    <div className="form-checkbox">
+                      <input
+                        type="checkbox"
+                        className="form-checkbox-input"
+                        label="checkbox-code-of-conduct"
+                        required={true}
+                        checked={checked}
+                        onChange={handleOnCheck}
+                      />
+                      <span className="form-checkbox-label">
+                        I hereby adhere to the&nbsp;
+                        <span
+                          className="form-checkbox-conduct"
+                          onClick={handleOnCheck}
+                        >
+                          Code of Conduct
+                        </span>
+                      </span>
+                      {display ? (
+                        <Modal
+                          setDisplay={setDisplay}
+                          setChecked={setChecked}
+                        />
+                      ) : null}
+                    </div>
+
                     <div className="form-button-group">
                       <button
                         className="form-button"
                         onClick={prevPage}
                         disabled={page === 0}
                       >
-                        Previous
+                        PREVIOUS
                       </button>
 
                       <button
@@ -176,14 +207,14 @@ const Register = () => {
                         onClick={nextPage}
                         disabled={page === 3}
                       >
-                        Next
+                        NEXT
                       </button>
 
                       <button
                         className="form-button form-submit"
                         onClick={handleSubmit}
                       >
-                        Submit
+                        SUBMIT
                       </button>
                     </div>
                     <ResponseMessage />
@@ -191,14 +222,14 @@ const Register = () => {
                 </>
               ) : (
                 <div className="register-closed">
-                  <div>REGISTRATIONS ARE</div>{" "}
+                  <div>REGISTRATIONS ARE</div>
                   <div className="register-closed-word">CLOSED</div>
                 </div>
               )
             }
           </div>
+
           <div className="register-image-wrapper">
-            {/* <div className="empty-div"></div> */}
             <a
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               target="_blank"

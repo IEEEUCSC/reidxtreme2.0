@@ -1,0 +1,82 @@
+.register .form-group {
+  padding-top: 2rem;
+  font-size: 1.25rem;
+}
+.register .form-group-title {
+  font-size: 1.5rem;
+}
+
+/* Div surrounding sub-groups */
+.register .form-sub-group-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.register .form-sub-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.register .form-sub-group::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: var(--green);
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: width 0.3s;
+}
+.register .form-sub-group:focus-within::after {
+  width: 100%;
+}
+
+.register .form-sub-group .form-label {
+  position: relative;
+  top: 1.75rem;
+  left: 0.5rem;
+  order: 1;
+  z-index: 0;
+  transition: 0.3s;
+  height: 1rem;
+}
+
+/* Hiding dummy placeholders */
+.register .form-sub-group .form-control::placeholder {
+  opacity: 0;
+}
+
+.register .form-sub-group .form-control {
+  position: relative;
+  z-index: 1;
+  order: 2;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  transition: 0.3s;
+  border-bottom: 1px solid black;
+  font-size: 1.25rem;
+}
+
+.register .form-sub-group .form-control:focus {
+  box-shadow: none;
+}
+.register .form-sub-group .form-control:required + .form-label::after {
+  content: "*";
+  color: red;
+}
+
+/* Moves label if placeholder is not shown or if it is focused */
+.register .form-sub-group .form-control:not(:placeholder-shown) + .form-label,
+.register .form-sub-group .form-control:focus + .form-label {
+  top: 0;
+  left: 0;
+}
+
+.register .form-sub-group .form-control:focus + .form-label {
+  color: var(--green);
+}
