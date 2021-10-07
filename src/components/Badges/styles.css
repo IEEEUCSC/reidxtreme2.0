@@ -44,6 +44,10 @@
   margin-top: 3rem;
 }
 
+.badges-select::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .badges-select-item {
   position: relative;
   top: 0;
