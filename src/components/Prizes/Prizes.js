@@ -28,7 +28,7 @@ const Prizes = () => {
 
         <div className="prizes-card prizes-card-gold">
           <div className="prizes-front">
-            <img className="prizes-img-left" src={TShirt} alt="Github Tshirt" />
+            <img className="prizes-img-left" src={TShirt} alt="GitHub Tshirt" />
             <img
               className="prizes-img-right"
               src={IEEECard}
