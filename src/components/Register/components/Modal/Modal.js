@@ -93,6 +93,10 @@ const Modal = ({ setDisplay, setChecked }) => {
             competition run smoothly. We hope you have a great time at
             ReidXtreme!
           </p>
+          <p>
+            If your team is in agreement with our Code of Conduct, please
+            confirm via the 'I Agree' button below.
+          </p>
           <p>Happy Coding!</p>
         </div>
         <div className="form-button-group">
@@ -104,7 +108,7 @@ const Modal = ({ setDisplay, setChecked }) => {
             onClick={handleClickAccept}
             disabled={!enabled}
           >
-            AGREED
+            I AGREE
           </button>
         </div>
       </div>
