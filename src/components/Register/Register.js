@@ -101,6 +101,7 @@ const Register = () => {
     html.style.overflow = "auto";
   }
 
+  // When code of conduct is checked
   const handleOnCheck = () => {
     if (checked) {
       setChecked(false);
@@ -171,7 +172,9 @@ const Register = () => {
                       <input
                         type="checkbox"
                         className="form-checkbox-input"
-                        label="checkbox-code-of-conduct"
+                        name="checkbox-code-of-conduct"
+                        title="Agree to the Code of Conduct"
+                        placeholder="Code of Conduct"
                         required={true}
                         checked={checked}
                         onChange={handleOnCheck}
@@ -180,7 +183,7 @@ const Register = () => {
                         I hereby adhere to the&nbsp;
                         <span
                           className="form-checkbox-conduct"
-                          onClick={handleOnCheck}
+                          onClick={() => setDisplay(true)}
                         >
                           Code of Conduct
                         </span>

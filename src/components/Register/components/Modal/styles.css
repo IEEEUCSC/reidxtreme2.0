@@ -51,6 +51,11 @@
   background-color: black;
 }
 
+.modal-content-heading {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
 .modal .form-button-group {
   text-align: right;
   font-size: 1rem;
