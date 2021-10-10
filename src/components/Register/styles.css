@@ -8,11 +8,11 @@
 }
 
 .register-form {
-  flex: 75%;
+  flex: 80%;
 }
 
 .register-image-wrapper {
-  flex: 25%;
+  flex: 20%;
 }
 
 /* Form checkbox */
@@ -152,9 +152,6 @@
 
 /* Mobile Screens */
 @media screen and (max-width: 991px) {
-  .register .form-sub-group-wrapper {
-    flex-direction: column;
-  }
   .register .form-button {
     margin-bottom: 0.5rem;
   }

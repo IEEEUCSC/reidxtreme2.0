@@ -80,3 +80,9 @@
 .register .form-sub-group .form-control:focus + .form-label {
   color: var(--green);
 }
+
+@media screen and (max-width: 991px) {
+  .register .form-sub-group-wrapper {
+    flex-direction: column;
+  }
+}
