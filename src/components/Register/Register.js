@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { createTeam } from "../../actions/teams";
 
 // data
-import { countdownTo } from "../../data";
+import { registerEnd } from "../../data";
 
 // form validation
 import { isFormValid, isTeamHandleValid, removeExtraSpace } from "./validation";
@@ -15,8 +15,6 @@ import { isFormValid, isTeamHandleValid, removeExtraSpace } from "./validation";
 import Team from "./components/Team/Team";
 import Member from "./components/Team/Member";
 import Modal from "./components/Modal/Modal";
-
-import Egg from "./assets/egg.webp";
 
 import "./styles.css";
 import "./components/Team/styles.css"; // form group styling
@@ -87,7 +85,7 @@ const Register = () => {
     setPage((oldPage) => (oldPage < 3 ? oldPage + 1 : oldPage));
 
   // Checks if registrations are closed
-  const isClosed = () => new Date() > new Date(countdownTo);
+  const isClosed = () => new Date() > new Date(registerEnd);
 
   // Code of conduct modal
   const [display, setDisplay] = useState(false);
@@ -119,12 +117,15 @@ const Register = () => {
     }));
     const formattedTeamData = formatData(teamData);
 
+    const formValid = isFormValid(formattedTeamData);
     if (!isTeamHandleValid(teamData)) {
+      setPage(0);
       setResponse({
         success: false,
         message: "The HackerRank handle should contain the prefix 'RX2_'",
       });
-    } else if (!isFormValid(formattedTeamData)) {
+    } else if (!formValid.isValid) {
+      setPage(formValid.memberNo ? formValid.memberNo : 0);
       setResponse({
         success: false,
         message: "Some form fields are incomplete",
@@ -160,7 +161,7 @@ const Register = () => {
               !isClosed() ? (
                 <>
                   <h1 className="section-title">REGISTER</h1>
-                  <Form onSubmit={(e) => e.preventDefault()}>
+                  <Form onSubmit={(e) => e.preventDefault()} noValidate>
                     <div
                       className={animate ? "fade-in" : ""}
                       onAnimationEnd={() => setAnimate(false)}
@@ -238,12 +239,7 @@ const Register = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                src={Egg}
-                alt="Egg"
-                title="You are Eggcelent"
-                className="register-image"
-              />
+              <div title="Eggcelent" className="register-image" />
             </a>
           </div>
         </div>

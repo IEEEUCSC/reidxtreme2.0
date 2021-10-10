@@ -11,17 +11,36 @@ export const isFormValid = (teamData) => {
   const teamMembers = teamData.teamMembers.slice();
   if (teamMembers.length !== 0) {
     var valid = true;
-    teamMembers.forEach((item) => {
-      if (item.regNo === "") valid = false;
-      if (item.name === "") valid = false;
-      if (item.phNo === "") valid = false;
-      if (item.email === "") valid = false;
-    });
-    if (!valid) return valid;
+    var memberNo = 1;
+    for (let i = 0; i < teamMembers.length; i++) {
+      const member = teamMembers[i];
+      memberNo = i + 1;
+
+      if (member.regNo === "") valid = false;
+      if (member.name === "") valid = false;
+      if (member.phNo === "") valid = false;
+      if (member.email === "") valid = false;
+      console.log(memberNo);
+
+      if (!valid) {
+        break;
+      }
+    }
+    if (!valid)
+      return {
+        isValid: false,
+        memberNo: memberNo,
+      };
   } else {
-    return false;
+    return {
+      isValid: false,
+      memberNo: 1,
+    };
   }
-  return true;
+  return {
+    isValid: true,
+    memberNo: null,
+  };
 };
 
 // Checking if team handle is valid
