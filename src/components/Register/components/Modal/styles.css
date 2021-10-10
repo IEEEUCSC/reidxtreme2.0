@@ -21,7 +21,13 @@
   background-color: white;
   box-shadow: 0rem 0rem 5rem rgba(0, 0, 0, 0.5);
   padding: 4rem;
-  animation: reveal 0.5s forwards;
+}
+
+.modal-container.opening {
+  animation: reveal 0.5s forwards ease-out;
+}
+.modal-container.closing {
+  animation: reveal 0.3s reverse ease-out;
 }
 
 @keyframes reveal {

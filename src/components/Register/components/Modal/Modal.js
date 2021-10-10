@@ -5,6 +5,8 @@ import "./styles.css";
 const Modal = ({ setDisplay, setChecked }) => {
   // Agree button state
   const [enabled, setEnabled] = useState(false);
+  const [closing, setClosing] = useState(false);
+  const [opening, setOpening] = useState(true);
 
   // Checks if user scrolled to bottom
   const handleScroll = (e) => {
@@ -17,17 +19,30 @@ const Modal = ({ setDisplay, setChecked }) => {
 
   // Buttons
   const handleClickCancel = () => {
-    setChecked(false);
-    setDisplay(false);
+    setClosing(true);
   };
   const handleClickAccept = () => {
     setChecked(true);
-    setDisplay(false);
+    setClosing(true);
+  };
+
+  const handleAnimationEnd = () => {
+    if (closing) {
+      setClosing(false);
+      setDisplay(false);
+    } else if (opening) {
+      setOpening(false);
+    }
   };
 
   return (
     <div className="modal">
-      <div className="modal-container">
+      <div
+        className={`modal-container ${closing ? "closing" : ""}${
+          opening ? "opening" : ""
+        }`}
+        onAnimationEnd={handleAnimationEnd}
+      >
         <h1 className="section-title">CODE OF CONDUCT</h1>
         <div className="modal-content" onScroll={handleScroll}>
           <p>
