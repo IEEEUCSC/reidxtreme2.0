@@ -74,8 +74,8 @@
   font-weight: bold;
   letter-spacing: 0.2rem;
 }
-.countdown-closed {
-  color: red;
+.countdown-end {
+  color: var(--green);
 }
 
 @keyframes pulse {
