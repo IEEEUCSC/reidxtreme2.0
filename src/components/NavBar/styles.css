@@ -82,6 +82,8 @@
 
 .navbar .navbar-toggler .navbar-toggler-icon::after {
   content: url("./assets/up-arrow.svg");
+  width: 100%;
+  height: 100%;
 }
 
 /* Mobile */
