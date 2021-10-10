@@ -7,6 +7,7 @@ import {
   FaLinkedinIn as Linkedin,
 } from "react-icons/fa";
 
+// Logos
 import WebsiteLogo from "../../assets/images/full-logo.webp";
 import IEEELogo from "../../assets/images/IEEE_Logo.webp";
 import ACMLogo from "../../assets/images/ACM_Logo.webp";
