@@ -4,7 +4,7 @@ import CountdownElement from "react-countdown";
 import { BsChevronCompactDown as ChevronDown } from "react-icons/bs";
 import { Link } from "react-scroll";
 
-import { countdownTo } from "../../data";
+import { competitionBegin } from "../../data";
 import "./styles.css";
 
 const CountdownNumber = ({ num, label }) => {
@@ -21,20 +21,27 @@ const Countdown = () => {
   const countdownRender = ({ days, hours, minutes, seconds, completed }) => {
     if (!completed) {
       return (
-        <div className="countdown-timer">
-          <CountdownNumber num={days} label="DAYS" />
-          <div>:</div>
-          <CountdownNumber num={hours} label="HOURS" />
-          <div>:</div>
-          <CountdownNumber num={minutes} label="MINUTES" />
-          <div>:</div>
-          <CountdownNumber num={seconds} label="SECONDS" />
-        </div>
+        <>
+          <div className="countdown-title">
+            BRACE YOURSELVES FOR&nbsp;
+            <span className="countdown-battle">BATTLE</span>
+          </div>
+          <div className="countdown-timer">
+            <CountdownNumber num={days} label="DAYS" />
+            <div>:</div>
+            <CountdownNumber num={hours} label="HOURS" />
+            <div>:</div>
+            <CountdownNumber num={minutes} label="MINUTES" />
+            <div>:</div>
+            <CountdownNumber num={seconds} label="SECONDS" />
+          </div>
+        </>
       );
     } else {
       return (
         <div className="countdown-completed">
-          REGISTRATIONS ARE <span className="countdown-closed">CLOSED</span>
+          THE&nbsp;<span className="countdown-end">BATTLE</span>&nbsp;HAS&nbsp;
+          <span className="countdown-end">COMMENCED</span>
         </div>
       );
     }
@@ -43,11 +50,8 @@ const Countdown = () => {
   return (
     <section id="top" className="countdown">
       <Container>
-        <div className="countdown-title">
-          BRACE YOURSELVES FOR <span className="countdown-battle">BATTLE</span>
-        </div>
         <CountdownElement
-          date={new Date(countdownTo)}
+          date={new Date(competitionBegin)}
           renderer={countdownRender}
         />
         <Link to="home">
