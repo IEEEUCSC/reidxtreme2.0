@@ -119,25 +119,35 @@
 .register-image-wrapper {
   margin: 0;
   box-sizing: border-box;
+  position: relative;
 }
-
-.register-image {
+.register-image,
+.register-image-hover {
   width: 100%;
   height: 100%;
-  background-image: url("./assets/egg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  transition: background 0.3s;
 }
 
-.register-image:hover {
+.register-image {
+  background-image: url("./assets/egg.webp");
+}
+.register-image-hover {
+  opacity: 0;
   background-image: url("./assets/egg-hover.webp");
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s;
+}
+.register:hover .register-image-hover {
+  opacity: 1;
 }
 
 /* When registrations are closed */
 .register-closed {
-  height: 100%;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
