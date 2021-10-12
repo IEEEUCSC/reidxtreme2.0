@@ -223,7 +223,7 @@ const Register = () => {
                 </>
               ) : (
                 <div className="register-closed">
-                  <div>REGISTRATIONS ARE</div>
+                  <div>THE GATES TO REIDXTREME ARE </div>
                   <div className="register-closed-word">CLOSED</div>
                 </div>
               )

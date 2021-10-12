@@ -147,17 +147,17 @@
 
 /* When registrations are closed */
 .register-closed {
-  height: 20rem;
+  height: 18rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.2rem;
 }
 .register-closed-word {
   color: var(--green);
-  font-size: 1.75rem;
+  font-size: 4rem;
 }
 
 /* Mobile Screens */
