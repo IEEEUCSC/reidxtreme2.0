@@ -4,7 +4,7 @@ import CountdownElement from "react-countdown";
 import { BsChevronCompactDown as ChevronDown } from "react-icons/bs";
 import { Link } from "react-scroll";
 
-import { competitionBegin } from "../../data";
+import { competitionBegin, registerEnd, isClosed } from "../../dates";
 import "./styles.css";
 
 const CountdownNumber = ({ num, label }) => {
@@ -23,8 +23,17 @@ const Countdown = () => {
       return (
         <>
           <div className="countdown-title">
-            BRACE YOURSELVES FOR&nbsp;
-            <span className="countdown-battle">BATTLE</span>
+            {!isClosed() ? (
+              <>
+                <span className="countdown-battle">REGISTRATION</span>
+                &nbsp;CLOSES IN
+              </>
+            ) : (
+              <>
+                BRACE YOURSELVES FOR&nbsp;
+                <span className="countdown-battle">BATTLE</span>
+              </>
+            )}
           </div>
           <div className="countdown-timer">
             <CountdownNumber num={days} label="DAYS" />
@@ -51,7 +60,7 @@ const Countdown = () => {
     <section id="top" className="countdown">
       <Container>
         <CountdownElement
-          date={new Date(competitionBegin)}
+          date={new Date(!isClosed() ? registerEnd : competitionBegin)}
           renderer={countdownRender}
         />
         <Link to="home">

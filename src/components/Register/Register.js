@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { createTeam } from "../../actions/teams";
 
 // data
-import { registerEnd } from "../../data";
+import { isClosed } from "../../dates";
 
 // form validation
 import { isFormValid, isTeamHandleValid, removeExtraSpace } from "./validation";
@@ -83,9 +83,6 @@ const Register = () => {
   // Next page
   const nextPage = () =>
     setPage((oldPage) => (oldPage < 3 ? oldPage + 1 : oldPage));
-
-  // Checks if registrations are closed
-  const isClosed = () => new Date() > new Date(registerEnd);
 
   // Code of conduct modal
   const [display, setDisplay] = useState(false);
@@ -240,6 +237,7 @@ const Register = () => {
               rel="noreferrer"
             >
               <div title="Eggcelent" className="register-image" />
+              <div title="Eggcelent" className="register-image-hover" />
             </a>
           </div>
         </div>
